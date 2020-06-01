@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
@@ -17,6 +17,11 @@ COLLECTION_NAME = "lego_catalogue"
 mongo = PyMongo(app)
 
 @app.route('/')
+@app.route('/get_minifigures')
+def get_minifigures():
+    return render_template("minifigures.html", minifigures=mongo.db.minifigures.find())
+
+
 def hello():
     return 'Hello World... again!'
 

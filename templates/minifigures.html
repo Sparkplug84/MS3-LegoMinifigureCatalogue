@@ -1,0 +1,17 @@
+<html>
+    <head>
+    
+    </head>
+
+    <body>
+        {% for minifigure in minifigures %}
+            {{minifigure.photo}}
+            {{minifigure.minifigure_name}}
+            {{minifigure.theme_name}}
+            {{minifigure.age}}
+            {{minifigure.feature}}
+            {{minifigure.parts}}
+            {{minifigure.rarity}}
+        {% endfor %}
+    </body>
+</html>
