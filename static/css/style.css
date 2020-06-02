@@ -1,0 +1,50 @@
+/* Minifigure Display */
+
+.collapsible-body-container {
+    border: black solid 3px;
+}
+
+.collapsible-body {
+    padding: 0.5rem;
+    background-color: rgb(241, 241, 20);
+    color: black;
+    border-left: black solid 3px;
+    border-right: black solid 3px;
+    border-bottom: black solid 3px;
+}
+
+.collapsible-header {
+    background-color: rgb(241, 241, 20);
+    color: black;
+    border: black solid 3px;
+}
+
+.photo {
+    width: 100%;
+    height: 250px;
+}
+
+.row .minifig-container {
+    padding: 4rem;
+}
+
+.right {
+    float: right;
+}
+
+/* This code below was taken from stack overflow. 
+Simple icon change after clicking on minifigure name */
+.iconadd{
+  display:inline-block ;
+}
+.iconremove{
+  display:none !important;
+}
+
+li.active .collapsible-header .material-icons.iconadd{
+  display: none;
+}
+
+li.active .collapsible-header .material-icons.iconremove{
+  display: inline-block !important;
+}

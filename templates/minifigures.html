@@ -1,36 +1,39 @@
-{% extends 'base.html' %} 
-{% block content %} 
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+{% for minifigure in minifigures %}
+    <div class="col s12 m6 l4 minifig-container">
+        <ul class="collapsible">
+            <li>
+                <img src="{{minifigure.photo}}" class="photo"/>
+                <div class="collapsible-header"><i class="material-icons iconadd">expand_more</i><i class="material-icons iconremove">expand_less</i><strong>{{minifigure.minifigure_name}}</strong></div>
+                <div class="collapsible-body">
+                    <div><strong>Theme:</strong>
+                        <span class="right">{{minifigure.theme_name}}</span>
+                    </div>
+                    <div><strong>Age:</strong>
+                        <span class="right">{{minifigure.age}}</span>
+                    </div>
+                    <div><strong>Feature:</strong>
+                        <span class="right">{{minifigure.feature}}</span>
+                    </div>
+                    <div><strong>Parts:</strong>
+                        <span class="right">{{minifigure.parts}}</span>
+                    </div>
+                    <div><strong>Rarity:</strong>
+                        <span class="right">{{minifigure.rarity}}</span>
+                    </div>
+                </div>
 
-    {% for minifigure in minifigures %} 
-        {{minifigure.photo}} 
-        {{minifigure.minifigure_name}} 
-        {{minifigure.theme_name}}
-        {{minifigure.age}} 
-        {{minifigure.feature}} 
-        {{minifigure.parts}}
-        {{minifigure.rarity}} 
-        
-    {% endfor %}
+                <!-- <div class="collapsible-body"><span><strong>Age:</strong> {{minifigure.age}}</span></div>
+                <div class="collapsible-body"><span><strong>Feature:</strong> {{minifigure.feature}}</span></div>
+                <div class="collapsible-body"><span><strong>Parts:</strong> {{minifigure.parts}}</span></div>
+                <div class="collapsible-body"><span><strong>Rarity:</strong> {{minifigure.rarity}}</span></div> -->
+            </li>
+        </ul>
+    </div>
+{% endfor %}
+</div>
 
-<ul class="collapsible popout">
-  <li>
-    <div class="collapsible-header">
-      <i class="material-icons">filter_drama</i>First
-    </div>
-    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-  </li>
-  <li>
-    <div class="collapsible-header">
-      <i class="material-icons">place</i>Second
-    </div>
-    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-  </li>
-  <li>
-    <div class="collapsible-header">
-      <i class="material-icons">whatshot</i>Third
-    </div>
-    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-  </li>
-</ul>
 
 {% endblock %}
