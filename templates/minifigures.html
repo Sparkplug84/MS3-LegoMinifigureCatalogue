@@ -1,17 +1,36 @@
-<html>
-    <head>
-    
-    </head>
+{% extends 'base.html' %} 
+{% block content %} 
 
-    <body>
-        {% for minifigure in minifigures %}
-            {{minifigure.photo}}
-            {{minifigure.minifigure_name}}
-            {{minifigure.theme_name}}
-            {{minifigure.age}}
-            {{minifigure.feature}}
-            {{minifigure.parts}}
-            {{minifigure.rarity}}
-        {% endfor %}
-    </body>
-</html>
+    {% for minifigure in minifigures %} 
+        {{minifigure.photo}} 
+        {{minifigure.minifigure_name}} 
+        {{minifigure.theme_name}}
+        {{minifigure.age}} 
+        {{minifigure.feature}} 
+        {{minifigure.parts}}
+        {{minifigure.rarity}} 
+        
+    {% endfor %}
+
+<ul class="collapsible popout">
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">filter_drama</i>First
+    </div>
+    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+  </li>
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">place</i>Second
+    </div>
+    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+  </li>
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">whatshot</i>Third
+    </div>
+    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+  </li>
+</ul>
+
+{% endblock %}
