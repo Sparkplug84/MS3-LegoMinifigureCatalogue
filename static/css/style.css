@@ -29,7 +29,9 @@
 }
 
 .row .minifig-container {
-    padding: 4rem;
+    padding-top: 4rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
 }
 
 .right {

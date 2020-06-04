@@ -5,23 +5,23 @@
     <div class="col s12 m6 l4 minifig-container">
         <ul class="collapsible popout">
             <li>
-                <img src="{{minifigure.photo}}" class="photo"/>
+                <img src="{{ url_for('file', filename=minifigure.photo) }}" class="photo responsive-img"/>
                 <div class="collapsible-header"><i class="material-icons iconadd">expand_more</i><i class="material-icons iconremove">expand_less</i><strong>{{minifigure.minifigure_name}}</strong></div>
                 <div class="collapsible-body">
                     <div class="list-item"><strong>Theme:</strong>
                         <span class="right">{{minifigure.theme_name}}</span>
                     </div>
                     <div class="list-item"><strong>Age:</strong>
-                        <span class="right">{{minifigure.age}}</span>
+                        <span class="right">{{minifigure.age_range}}</span>
                     </div>
                     <div class="list-item"><strong>Feature:</strong>
                         <span class="right">{{minifigure.feature}}</span>
                     </div>
                     <div class="list-item"><strong>Parts:</strong>
-                        <span class="right">{{minifigure.parts}}</span>
+                        <span class="right">{{minifigure.number_of_parts}}</span>
                     </div>
                     <div class="list-item"><strong>Rarity:</strong>
-                        <span class="right">{{minifigure.rarity}}</span>
+                        <span class="right">{{minifigure.rarity_name}}</span>
                     </div>
                     <div class="edit list-item">Edit<i class="material-icons chevron_right">chevron_right</i></div>
                 </div>
