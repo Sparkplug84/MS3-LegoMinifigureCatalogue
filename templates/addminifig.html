@@ -1,0 +1,91 @@
+{% extends 'base.html' %} {% block content %}
+
+<h3>Add Minifigure</h3>
+<div class="row form">
+  <form action="" method="POST" class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <div class="file-field input-field">
+          <div class="btn">
+            <i class="material-icons">add_a_photo</i><span>Upload Photo</span>
+            <input type="file" />
+          </div>
+          <div class="file-path-wrapper">
+            <input
+              id="photo"
+              name="photo"
+              class="file-path validate"
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input
+          id="minifigure_name"
+          name="minifigure_name"
+          type="text"
+          class="validate"
+        />
+        <label for="icon_prefix">Minifigure Name</label>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">theaters</i>
+        <select id="theme" name="theme_name">
+          <option value="" disabled selected>Choose Theme</option>
+          {% for theme in themes %}
+          <option value="{{theme.theme_name}}">{{theme.theme_name}}</option>
+          {% endfor %}
+        </select>
+        <label>Theme Categories</label>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">cake</i>
+        <select id="age" name="age_range">
+          <option value="" disabled selected>Choose Minifigure Age</option>
+          {% for years in age %}
+          <option value="{{years.age_range}}">{{years.age_range}}</option>
+          {% endfor %}
+        </select>
+        <label>Minifigure Age</label>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">star</i>
+        <input id="feature" name="feature" type="text" class="validate" />
+        <label for="icon_prefix">Feature eg. 2 sided head, special tool</label>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">build</i>
+        <select id="parts" name="number_of_parts">
+          <option value="" disabled selected>Choose Number of Parts</option>
+          {% for number in parts %}
+          <option value="{{number.number_of_parts}}"
+            >{{number.number_of_parts}}</option
+          >
+          {% endfor %}
+        </select>
+        <label>Minifigure Parts</label>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">fingerprint</i>
+        <select id="rarity" name="rarity_name">
+          <option value="" disabled selected>Choose Rarity</option>
+          {% for name in rarity %}
+            <option value="{{name.rarity_name}}">{{name.rarity_name}}</option>
+          {% endfor %}
+        </select>
+        <label>Rarity</label>
+      </div>
+      
+    </div>
+  </form>
+</div>
+
+{% endblock %}

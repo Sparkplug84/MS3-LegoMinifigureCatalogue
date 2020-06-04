@@ -22,6 +22,15 @@ def get_minifigures():
     return render_template("minifigures.html", minifigures=mongo.db.minifigures.find())
 
 
+@app.route('/add_minifig')
+def add_minifig():
+    return render_template('addminifig.html',
+    themes=mongo.db.themes.find(),
+    age=mongo.db.age.find(),
+    parts=mongo.db.parts.find(),
+    rarity=mongo.db.rarity.find())
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),

@@ -5,7 +5,7 @@
 }
 
 .collapsible-body {
-    padding: 0.5rem;
+    padding: 0;
     background-color: rgb(241, 241, 20);
     color: black;
     border-left: black solid 3px;
@@ -17,6 +17,10 @@
     background-color: rgb(241, 241, 20);
     color: black;
     border: black solid 3px;
+}
+
+.collapsible-header:hover {
+    background-color: rgb(206, 206, 6);
 }
 
 .photo {
@@ -31,6 +35,21 @@
 .right {
     float: right;
 }
+
+.edit {
+    width: 100%;
+    border-top: black solid 3px;
+}
+
+.list-item {
+    padding: 5px;
+}
+
+.chevron_right {
+    float: right;
+}
+
+
 
 /* This code below was taken from stack overflow. 
 Simple icon change after clicking on minifigure name */
@@ -47,4 +66,14 @@ li.active .collapsible-header .material-icons.iconadd{
 
 li.active .collapsible-header .material-icons.iconremove{
   display: inline-block !important;
+}
+
+/* Add Minifigure */
+
+.form {
+    width: 50%;
+}
+
+.btn i {
+    margin-right: 10px;
 }

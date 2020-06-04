@@ -3,26 +3,27 @@
 <div class="row">
 {% for minifigure in minifigures %}
     <div class="col s12 m6 l4 minifig-container">
-        <ul class="collapsible">
+        <ul class="collapsible popout">
             <li>
                 <img src="{{minifigure.photo}}" class="photo"/>
                 <div class="collapsible-header"><i class="material-icons iconadd">expand_more</i><i class="material-icons iconremove">expand_less</i><strong>{{minifigure.minifigure_name}}</strong></div>
                 <div class="collapsible-body">
-                    <div><strong>Theme:</strong>
+                    <div class="list-item"><strong>Theme:</strong>
                         <span class="right">{{minifigure.theme_name}}</span>
                     </div>
-                    <div><strong>Age:</strong>
+                    <div class="list-item"><strong>Age:</strong>
                         <span class="right">{{minifigure.age}}</span>
                     </div>
-                    <div><strong>Feature:</strong>
+                    <div class="list-item"><strong>Feature:</strong>
                         <span class="right">{{minifigure.feature}}</span>
                     </div>
-                    <div><strong>Parts:</strong>
+                    <div class="list-item"><strong>Parts:</strong>
                         <span class="right">{{minifigure.parts}}</span>
                     </div>
-                    <div><strong>Rarity:</strong>
+                    <div class="list-item"><strong>Rarity:</strong>
                         <span class="right">{{minifigure.rarity}}</span>
                     </div>
+                    <div class="edit list-item">Edit<i class="material-icons chevron_right">chevron_right</i></div>
                 </div>
 
                 <!-- <div class="collapsible-body"><span><strong>Age:</strong> {{minifigure.age}}</span></div>
