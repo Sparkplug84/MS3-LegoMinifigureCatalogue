@@ -1,3 +1,7 @@
+html {
+    font-family: 'Ubuntu', sans-serif;
+}
+
 /* Minifigure Display */
 
 .collapsible-body-container {
@@ -6,17 +10,17 @@
 
 .collapsible-body {
     padding: 0;
-    background-color: rgb(241, 241, 20);
-    color: black;
-    border-left: black solid 3px;
+    background-color: rgb(1, 166, 255);
+    color: white;
+    /* border-left: black solid 3px;
     border-right: black solid 3px;
-    border-bottom: black solid 3px;
+    border-bottom: black solid 3px; */
 }
 
 .collapsible-header {
     background-color: rgb(241, 241, 20);
     color: black;
-    border: black solid 3px;
+    /* border: black solid 3px; */
 }
 
 .collapsible-header:hover {
@@ -40,15 +44,28 @@
 
 .edit {
     width: 100%;
-    border-top: black solid 3px;
+    /* border-top: black solid 3px; */
+    color: black;
+    background-color: rgb(241, 241, 20);
+    height: 55px;
+    line-height: 45px;
+}
+
+.edit:hover {
+    background-color: rgb(206, 206, 6);
+}
+
+.edit-link {
+    height: 150px;
 }
 
 .list-item {
-    padding: 5px;
+    padding: 6px;
 }
 
 .chevron_right {
     float: right;
+    line-height: 45px;
 }
 
 
