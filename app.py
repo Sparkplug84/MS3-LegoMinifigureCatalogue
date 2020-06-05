@@ -53,12 +53,12 @@ def file(filename):
 
 @app.route('/edit_minifig/<minifigure_id>')
 def edit_minifig(minifigure_id):
-    the_minifig = mongo.db.minifigures.find_one({'_id': ObjectId(minifigure_id)})
+    the_minifig = mongo.db.minifigures.find_one({"_id": ObjectId(minifigure_id)})
     all_themes = mongo.db.themes.find()
     all_age = mongo.db.age.find()
     all_parts = mongo.db.parts.find()
     all_rarity = mongo.db.rarity.find()
-    return render_template('editminifig.html', minifigure=the_minifig, theme=all_themes, age=all_age, parts=all_parts, rarity=all_rarity)
+    return render_template('editminifig.html', minifigure=the_minifig, themes=all_themes, age=all_age, parts=all_parts, rarity=all_rarity)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,94 @@
+{% extends 'base.html' %} {% block content %}
+
+<h3>Edit Minifigure</h3>
+<div class="row form">
+  <form action="{{ url_for('insert_minifig') }}" method="POST" class="col s12" enctype="multipart/form-data">
+    <div class="row">
+      
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input
+          id="minifigure_name"
+          name="minifigure_name"
+          type="text"
+          class="validate"
+          value="{{minifigure.minifigure_name}}"
+        />
+        <label for="icon_prefix">Minifigure Name</label>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">theaters</i>
+        <select id="theme" name="theme_name">
+          <option value="" disabled selected>Choose Theme</option>
+          {% for theme in themes %}
+          {% if theme.theme_name == minifigure.theme_name %}
+          <option value="{{theme.theme_name}}" selected>{{theme.theme_name}}</option>
+          {% else %}
+          <option value="{{theme.theme_name}}">{{theme.theme_name}}</option>
+          {% endif %}
+          {% endfor %}
+        </select>
+        <label>Theme Categories</label>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">cake</i>
+        <select id="age" name="age_range">
+          <option value="" disabled selected>Choose Minifigure Age</option>
+          {% for years in age %}
+          {% if years.age_range == minifigure.age_range %}
+          <option value="{{years.age_range}}" selected>{{years.age_range}}</option>
+          {% else %}
+          <option value="{{years.age_range}}">{{years.age_range}}</option>
+          {% endif %}
+          {% endfor %}
+        </select>
+        <label>Minifigure Age</label>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">star</i>
+        <input id="feature" name="feature" type="text" class="validate" value="{{minifigure.feature}}"/>
+        <label for="icon_prefix">Feature eg. 2 sided head, special tool</label>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">build</i>
+        <select id="parts" name="number_of_parts">
+          <option value="" disabled selected>Choose Number of Parts</option>
+          {% for number in parts %}
+          {% if number.number_of_parts == minifigure.number_of_parts %}
+          <option value="{{number.number_of_parts}}" selected>{{number.number_of_parts}}</option>
+          {% else %}
+          <option value="{{number.number_of_parts}}">{{number.number_of_parts}}</option>
+          {% endif %}
+          {% endfor %}
+        </select>
+        <label>Minifigure Parts</label>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">fingerprint</i>
+        <select id="rarity" name="rarity_name">
+          <option value="" disabled selected>Choose Rarity</option>
+          {% for name in rarity %}
+          {% if name.rarity_name == minifigure.rarity_name %}
+          <option value="{{name.rarity_name}}" selected>{{name.rarity_name}}</option>
+          {% else %}
+          <option value="{{name.rarity_name}}">{{name.rarity_name}}</option>
+          {% endif %}
+          {% endfor %}
+        </select>
+        <label>Rarity</label>
+      </div>
+
+      <button class="btn waves-effect waves-light" type="submit" name="action">
+        Edit Minifigure
+        <i class="material-icons right">add</i>
+      </button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
