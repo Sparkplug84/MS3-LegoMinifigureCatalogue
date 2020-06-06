@@ -2,7 +2,7 @@
 
 <h3>Edit Minifigure</h3>
 <div class="row form">
-  <form action="{{ url_for('insert_minifig') }}" method="POST" class="col s12" enctype="multipart/form-data">
+  <form action="{{ url_for('update_minifig', minifigure_id=minifigure._id) }}" method="POST" class="col s12" enctype="multipart/form-data">
     <div class="row">
       
       <div class="input-field col s12">

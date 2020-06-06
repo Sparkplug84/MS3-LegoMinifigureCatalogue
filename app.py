@@ -36,7 +36,7 @@ def insert_minifig():
     if 'photo' in request.files:
         photo = request.files['photo']
         mongo.save_file(photo.filename, photo)
-        mongo.db.minifigures.insert({'photo': photo.filename, 
+        mongo.db.minifigures.insert_one({'photo': photo.filename, 
                             'minifigure_name': request.form.get('minifigure_name'),
                             'theme_name': request.form.get('theme_name'),
                             'age_range': request.form.get('age_range'),
@@ -59,6 +59,20 @@ def edit_minifig(minifigure_id):
     all_parts = mongo.db.parts.find()
     all_rarity = mongo.db.rarity.find()
     return render_template('editminifig.html', minifigure=the_minifig, themes=all_themes, age=all_age, parts=all_parts, rarity=all_rarity)
+
+
+@app.route('/update_minifig/<minifigure_id>', methods=['POST'])
+def update_minifig(minifigure_id):
+    mongo.db.minifigures.update_one({'_id': ObjectId(minifigure_id)},
+    { "$set": {
+        'minifigure_name': request.form.get('minifigure_name'),
+        'theme_name': request.form.get('theme_name'),
+        'age_range': request.form.get('age_range'),
+        'feature': request.form.get('feature'),
+        'number_of_parts': request.form.get('number_of_parts'),
+        'rarity_name': request.form.get('rarity_name')
+    }})
+    return redirect(url_for('get_minifigures')) 
 
 
 if __name__ == '__main__':
