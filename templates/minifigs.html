@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="row">
 {% for minifigure in minifigures %}
     <div class="col s12 m6 l3 minifig-container">
+    
         <ul class="collapsible popout">
+        
             <li>
+            
                 <img src="{{ url_for('file', filename=minifigure.photo) }}" class="photo responsive-img"/>
                 <div class="collapsible-header"><i class="material-icons iconadd">expand_more</i><i class="material-icons iconremove">expand_less</i><strong>{{minifigure.minifigure_name}}</strong></div>
                 <div class="collapsible-body">
@@ -23,15 +27,19 @@
                     <div class="list-item"><strong>Rarity:</strong>
                         <span class="right">{{minifigure.rarity_name}}</span>
                     </div>
-                    <a class="edit-link" href="{{ url_for('edit_minifig', minifigure_id=minifigure._id) }}"><div class="edit list-item">Edit<i class="material-icons chevron_right">chevron_right</i></div></a>
+                    <a class="edit-link" href="{{ url_for('edit_minifig', minifigure_id=minifigure._id) }}"><div class="edit list-item">Edit Minifigure<i class="material-icons chevron_right">chevron_right</i></div></a>
+                    <a class="edit-link" href="{{ url_for('delete_minifig', minifigure_id=minifigure._id) }}"><div class="edit list-item">Delete Minifigure<i class="material-icons chevron_right">chevron_right</i></div></a>
                 </div>
 
                 <!-- <div class="collapsible-body"><span><strong>Age:</strong> {{minifigure.age}}</span></div>
                 <div class="collapsible-body"><span><strong>Feature:</strong> {{minifigure.feature}}</span></div>
                 <div class="collapsible-body"><span><strong>Parts:</strong> {{minifigure.parts}}</span></div>
                 <div class="collapsible-body"><span><strong>Rarity:</strong> {{minifigure.rarity}}</span></div> -->
+            
             </li>
+            
         </ul>
+        
     </div>
 {% endfor %}
 </div>

@@ -19,7 +19,8 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_minifigures')
 def get_minifigures():
-    return render_template("minifigs.html", minifigures=mongo.db.minifigures.find())
+    minifigures = mongo.db.minifigures.find({"minifig_deleted": False})
+    return render_template("minifigs.html", minifigures=minifigures)
 
 
 @app.route('/add_minifig')
@@ -42,7 +43,8 @@ def insert_minifig():
                             'age_range': request.form.get('age_range'),
                             'feature': request.form.get('feature'),
                             'number_of_parts': request.form.get('number_of_parts'),
-                            'rarity_name': request.form.get('rarity_name')})
+                            'rarity_name': request.form.get('rarity_name'),
+                            'minifig_deleted': False})
     return redirect(url_for('get_minifigures'))
 
 
@@ -72,7 +74,16 @@ def update_minifig(minifigure_id):
         'number_of_parts': request.form.get('number_of_parts'),
         'rarity_name': request.form.get('rarity_name')
     }})
-    return redirect(url_for('get_minifigures')) 
+    return redirect(url_for('get_minifigures'))
+
+
+@app.route('/delete_minifig/<minifigure_id>')
+def delete_minifig(minifigure_id):
+    mongo.db.minifigures.update_one({'_id': ObjectId(minifigure_id)},
+    { "$set": {
+        'minifig_deleted': True }
+    })
+    return redirect(url_for('get_minifigures'))
 
 
 if __name__ == '__main__':
