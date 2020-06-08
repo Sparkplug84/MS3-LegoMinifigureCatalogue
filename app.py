@@ -86,6 +86,11 @@ def delete_minifig(minifigure_id):
     return redirect(url_for('get_minifigures'))
 
 
+@app.route('/get_themes')
+def get_themes():
+    return render_template('themes.html', themes=mongo.db.themes.find())
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),

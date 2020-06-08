@@ -59,6 +59,7 @@ html {
 
 .list-item {
     padding: 6px;
+    text-align: left;
 }
 
 .chevron_right {
@@ -93,4 +94,11 @@ li.active .collapsible-header .material-icons.iconremove{
 
 .btn i {
     margin-right: 10px;
+}
+
+/* Themes */
+
+.themes-container {
+    text-align: center;
+    width: 80%;
 }
