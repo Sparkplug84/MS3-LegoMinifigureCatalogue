@@ -1,39 +1,25 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Mark McClean
 
-Welcome Mark McClean,
+## Milestone Project 3 – Data Centric Development 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+## Lego Minifigures Catalogue – Flask application using MongoDB
 
-## Gitpod Reminders
+The live website hosted by Heroku can be viewed [here](https://lego-minifigure-catalogue.herokuapp.com/).
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Why make a Lego Minifigures Catalogue?
+For the third milestone project I decided to build an application where users can add pictures and information of their own Lego Minifigures for others to view and admire, therefore buiding up a community of users that create the catalogue themselves. 
 
-`python3 -m http.server`
+Since I was young I was a Lego fanatic. That craze died down in my teens but now that I have children of my own, the love of Lego has returned. What better way to celebrate that than to create a Lego Minifigure Catalogue where people can come together and share their love of Lego.
 
-A blue button should appear to click: *Make Public*,
+Lego has come a log way since it began and now there are many themes and types of lego for small children and adults. This has resulted in a vast array of different minifigures for all themes, some of which have since been discontinued. I invite users to upload their own minifigues, unique or common so that others can enjoy the amazing collection.
 
-Another blue button should appear to click: *Open Browser*.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+## Sketelon
+I used the Balsamiq program for the wireframes and attached them to the directory. The original idea is still recognizable from the finished application. There have obviously been some design changes along the way but the wireframe is useful to have to put the idea in your head down on paper before you start coding. The wireframes can also be view her below.<br/>
+[Wireframe 1 - Home page callout Desktop](wireframes/1.LegoMinifiguresCatalogueHome)<br/>
+[Wireframe 2 - View Catalogue Desktop](wireframes/2.ViewCatalogue.png)<br/>
+[Wireframe 3 - Add Minifig Desktop](wireframes/3.Addaminifig.png)<br/>
+[Wireframe 4 - Manage Themes Desktop](wireframes/4.ManageThemes.png)<br/>
+[Wireframe 5 - Home Page Mobile](wireframes/5.MobileHome.png)<br/>
+[Wireframe 6 - View Catalogue Monile](wireframes/6.MobileViewCatalogue.png)<br/>
+[Wireframe 7 - Add Minifig Mobile](wireframes/7.MobileAddMinifig.png3.Addaminifig.png)<br/>
+[Wireframe 8 - Manage Themes Mobile](wireframes/8.MobileThemes.png)
