@@ -105,6 +105,12 @@ def update_theme(theme_id):
     return redirect(url_for('get_themes'))
 
 
+@app.route('/delete_theme/<theme_id>')
+def delete_theme(theme_id):
+    mongo.db.themes.remove({'_id': ObjectId(theme_id)})
+    return redirect(url_for('get_themes'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
