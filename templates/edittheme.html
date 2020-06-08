@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+<h3>Edit Theme</h3>
+<div class="row form">
+  <form action="{{ url_for('update_theme', theme_id=theme._id) }}" method="POST" class="col s12" enctype="multipart/form-data">
+    <div class="row">
+      
+      <div class="input-field col s12">
+        <i class="material-icons prefix">theaters</i>
+        <input id="theme_name" name="theme_name" type="text" class="validate" value="{{theme.theme_name}}"/>
+        <label for="icon_prefix">Theme Name</label>
+      </div>
+
+      <button class="btn waves-effect waves-light" type="submit" name="action">
+        Edit Theme
+        <i class="material-icons right">border_color</i>
+      </button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

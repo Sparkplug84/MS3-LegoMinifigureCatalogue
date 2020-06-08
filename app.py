@@ -91,6 +91,20 @@ def get_themes():
     return render_template('themes.html', themes=mongo.db.themes.find())
 
 
+@app.route('/edit_theme/<theme_id>')
+def edit_theme(theme_id):
+    return render_template('edittheme.html', theme=mongo.db.themes.find_one({'_id': ObjectId(theme_id)}))
+
+
+@app.route('/update_theme/<theme_id>', methods=['POST'])
+def update_theme(theme_id):
+    mongo.db.themes.update_one({'_id': ObjectId(theme_id)},
+    { "$set": {
+        'theme_name': request.form.get('theme_name') }
+    })
+    return redirect(url_for('get_themes'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),

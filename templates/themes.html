@@ -8,11 +8,11 @@
             <i class="material-icons iconadd">expand_more</i><i class="material-icons iconremove">expand_less</i><strong>{{theme.theme_name}}</strong>
         </div>
         <div class="collapsible-body">
-            <a class="edit-link" href="">
-                <div class="edit list-item">Edit<i class="material-icons chevron_right">chevron_right</i></div>
+            <a class="edit-link" href="{{ url_for('edit_theme', theme_id=theme._id) }}">
+                <div class="edit list-item">Edit Theme<i class="material-icons chevron_right">chevron_right</i></div>
             </a>
             <a class="edit-link" href="">
-                <div class="edit list-item">Delete<i class="material-icons chevron_right">chevron_right</i></div>
+                <div class="edit list-item">Delete Theme<i class="material-icons chevron_right">chevron_right</i></div>
             </a>
         </div>
       </li>

@@ -67,10 +67,8 @@ html {
     line-height: 45px;
 }
 
-
-
 /* This code below was taken from stack overflow. 
-Simple icon change after clicking on minifigure name */
+Icon toggle after clicking on minifigure name */
 .iconadd{
   display:inline-block ;
 }
