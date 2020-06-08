@@ -15,11 +15,11 @@ Lego has come a log way since it began and now there are many themes and types o
 
 ## Sketelon
 I used the Balsamiq program for the wireframes and attached them to the directory. The original idea is still recognizable from the finished application. There have obviously been some design changes along the way but the wireframe is useful to have to put the idea in your head down on paper before you start coding. The wireframes can also be view her below.<br/>
-[Wireframe 1 - Home page callout Desktop](wireframes/1.LegoMinifiguresCatalogueHome)<br/>
+[Wireframe 1 - Home page callout Desktop](wireframes/1.LegoMinifiguresCatalogueHome.png)<br/>
 [Wireframe 2 - View Catalogue Desktop](wireframes/2.ViewCatalogue.png)<br/>
 [Wireframe 3 - Add Minifig Desktop](wireframes/3.Addaminifig.png)<br/>
 [Wireframe 4 - Manage Themes Desktop](wireframes/4.ManageThemes.png)<br/>
 [Wireframe 5 - Home Page Mobile](wireframes/5.MobileHome.png)<br/>
-[Wireframe 6 - View Catalogue Monile](wireframes/6.MobileViewCatalogue.png)<br/>
-[Wireframe 7 - Add Minifig Mobile](wireframes/7.MobileAddMinifig.png3.Addaminifig.png)<br/>
+[Wireframe 6 - View Catalogue Mobile](wireframes/6.MobileViewCatalogue.png)<br/>
+[Wireframe 7 - Add Minifig Mobile](wireframes/7.MobileAddMinifig.png)<br/>
 [Wireframe 8 - Manage Themes Mobile](wireframes/8.MobileThemes.png)
