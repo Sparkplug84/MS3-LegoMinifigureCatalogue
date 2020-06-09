@@ -100,3 +100,27 @@ li.active .collapsible-header .material-icons.iconremove{
     text-align: center;
     width: 80%;
 }
+
+.add-theme {
+    float: left;
+    margin-left: 24px;
+}
+
+/* Buttons */
+
+.yellow-btn {
+    background-color: rgb(241, 241, 20);
+    color: black;
+}
+
+.yellow-btn:hover {
+    background-color: rgb(206, 206, 6);
+}
+
+.blue-btn {
+    background-color: rgb(1, 166, 255);
+}
+
+.blue-btn:hover {
+    background-color: rgb(7, 120, 180);
+}

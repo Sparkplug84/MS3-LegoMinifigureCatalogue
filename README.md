@@ -24,7 +24,7 @@ Each minifigure in the catalogue can be clicked on to view the additional inform
 
 When the user goes to the ‘Add a minifigure’ page they will be presented with a form to fill out to upload their own minifigure including photo. After completion they will be redirected to the catalogue where they can view their own minifigure.
 
-Users will also be given the option of adding extra Lego themes that may not get exist in the database. There will also be options to edit and delete existing themes.
+Users will also be given the option of adding extra Lego themes that may not yet exist in the database. There will also be options to edit and delete existing themes.
 
 The overall idea is that a community of users will be built up and they will create the catalogue for their own and others enjoyment.
 

@@ -111,6 +111,17 @@ def delete_theme(theme_id):
     return redirect(url_for('get_themes'))
 
 
+@app.route('/insert_theme', methods=['POST'])
+def insert_theme():
+    mongo.db.themes.insert_one({'theme_name': request.form.get('theme_name')})
+    return redirect(url_for('get_themes'))
+
+
+@app.route('/add_theme')
+def add_theme():
+    return render_template('addtheme.html')
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
