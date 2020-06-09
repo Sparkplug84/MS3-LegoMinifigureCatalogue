@@ -18,9 +18,34 @@
       href="{{url_for('static', filename='css/style.css')}}"
       type="text/css"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo"><img class="lego-icon"></img><span class="logo-text">Lego Minifigure Catalogue</span></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="sass.html">Home</a></li>
+                <li><a href="{{ url_for('get_minifigures') }}">View Catalogue</a></li>
+                <li><a href="{{ url_for('add_minifig') }}">Add Minifig</a></li>
+                <li><a href="{{ url_for('get_themes') }}">Manage Themes</a></li>
+            </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section>
+        <img class="header-img">
+    </section>
+
+    <section class="callout">
+        <h3>Welcome to the Lego Minifigure Catalogue</h3>
+    </section>
+
     {% block content %} {% endblock %}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

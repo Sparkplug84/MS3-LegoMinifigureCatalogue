@@ -2,6 +2,41 @@ html {
     font-family: 'Ubuntu', sans-serif;
 }
 
+/* Base Template */
+
+.lego-icon {
+    content: url('https://cdn3.iconfinder.com/data/icons/miscellaneous-vol-2-2/64/lego-head_with_hair-512.png');
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+}
+
+.logo-text {
+    vertical-align: top;
+    color: #000;
+}
+
+.nav-wrapper {
+    background-color: rgb(241, 241, 20);
+}
+
+nav ul a {
+    color: black;
+}
+
+.header-img {
+    content: url('../images/01195866_005.jpg');
+    width: 100%
+    
+}
+
+.callout {
+    padding: 100px;
+    background-color: rgb(1, 166, 255);
+    color: #FFF;
+    margin: 50px 0;
+}
+
 /* Minifigure Display */
 
 .collapsible-body-container {
