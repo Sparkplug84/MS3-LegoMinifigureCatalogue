@@ -17,6 +17,11 @@ COLLECTION_NAME = "lego_catalogue"
 mongo = PyMongo(app)
 
 @app.route('/')
+@app.route('/index_page')
+def index_page():
+    return render_template('index.html')
+
+
 @app.route('/get_minifigures')
 def get_minifigures():
     minifigures = mongo.db.minifigures.find({"minifig_deleted": False})

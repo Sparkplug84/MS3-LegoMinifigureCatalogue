@@ -24,18 +24,29 @@ nav ul a {
     color: black;
 }
 
+/* index */
+
 .header-img {
-    content: url('../images/01195866_005.jpg');
-    width: 100%
-    
+    content: url('../images/01195866_005.2.jpg');
+    width: 100%;
 }
 
 .callout {
     padding: 100px;
-    background-color: rgb(1, 166, 255);
+    background-color: rgb(45, 128, 173);
     color: #FFF;
     margin: 50px 0;
 }
+
+.callout-btn {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.callout-container {
+    padding: 50px 20px 0 50px;
+}
+
 
 /* Minifigure Display */
 
@@ -45,7 +56,7 @@ nav ul a {
 
 .collapsible-body {
     padding: 0;
-    background-color: rgb(1, 166, 255);
+    background-color: rgb(45, 128, 173);
     color: white;
     /* border-left: black solid 3px;
     border-right: black solid 3px;
@@ -153,7 +164,7 @@ li.active .collapsible-header .material-icons.iconremove{
 }
 
 .blue-btn {
-    background-color: rgb(1, 166, 255);
+    background-color: rgb(45, 128, 173);
 }
 
 .blue-btn:hover {
