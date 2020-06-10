@@ -2,17 +2,20 @@
 
 <section>
     <div class="row">
-        <div class="col s12 m4 l4">
+
+        <div class="col s12 m12 l8 right">
+            <img class="header-img">
+        </div>
+
+        <div class="col s12 m12 l4">
             <div class="callout-container">
                 <h3 class="callout-header">Welcome to the Lego Minifigure Catalogue</h3>
                 <a href="{{ url_for('get_minifigures') }}" class="waves-effect waves-light btn yellow-btn callout-btn">View Catalogue</a>
-                <a href="{{ url_for('add_minifig') }}" class="waves-effect waves-light btn yellow-btn">Add a Minifig</a>
+                <a href="{{ url_for('add_minifig') }}" class="waves-effect waves-light btn yellow-btn callout-btn">Add a Minifig</a>
             </div>
         </div>
         
-        <div class="col s12 m8 l8">
-            <img class="header-img">
-        </div>
+        
     </div>
 </section>
 
