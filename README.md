@@ -42,6 +42,36 @@ The Lego world is a predominantly bright and vibrant one and I want my website t
 
 I wanted to create a website with a sense of community where the users have the power and are relied upon to create the catalogue themselves and keep it up to date with accurate information. The theme of Lego is a bonus for me as I am a big fan of Lego.
 
+## Scope
+
+### User Stories
+
+As a potential user I would like to:
+
+- View an amazing Lego Minifigure catalogue and discover minfigs I’ve never seen before
+- Add my own photo and minifig info for others to enjoy
+- Edit info of other minifigs if something is missing or incorrect
+- Delete my minifig if I no longer want others to view it
+- Feel part of a community of Lego minifigure lovers by helping to build up the catalogue and keep it up to date with accurate info on all minifigs
+- Add new Lego themes, if they are not yet available on the site
+- Delete or modify Lego themes if they need updating or have been discontinued
+- To view minfigs of a certain theme, age or name
+- Be able to view the site on my phone, tablet or laptop
+- Have a simple design and clear instructions so I know how the site works
+- Have appropriate content for all users, young and old
+- Use a website that’s easy on the eye and makes me want to come back to see the latest uploaded minifigs.
+
+As a developer I would like:
+
+- To create a beautiful and user friendly website for fellow Lego lovers.
+- For users to enjoy the website and encourage them to upload their own minifigs and help build and maintain the catalogue.
+- Show my current knowledge of HTML, CSS, JS, Python, Flask and use of MongoDB with useful functionality built into the website.
+- To enjoy using the site myself just like any other user
+
+### Goal
+
+My goal for this project was to create a fun, user friendly and interactive experience for lovers of Lego minifigures. The website will be clear and minimal to provide users with the best experience whilst learning how to use the catalogue. My aim is to make the users feel like they’re part of a community of fellow Lego fans that buildup the catalogue together and help to keep it maintained.
+
 ## Sketelon
 
 I used the Balsamiq program for the wireframes and attached them to the directory. The original idea is still recognizable from the finished application. There have obviously been some design changes along the way but the wireframe is useful to have to put the idea in your head down on paper before you start coding. The wireframes can also be view her below.<br/>
