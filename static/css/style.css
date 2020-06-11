@@ -31,13 +31,6 @@ nav ul a {
     width: 100%;
 }
 
-.callout {
-    padding: 100px;
-    background-color: rgb(45, 128, 173);
-    color: #FFF;
-    margin: 50px 0;
-}
-
 .callout-btn {
     margin-top: 10px;
     margin-bottom: 20px;
@@ -49,6 +42,36 @@ nav ul a {
     padding: 50px 20px 0 50px;
 }
 
+.home-section-container {
+    padding: 60px;
+    background-color: rgb(45, 128, 173);
+    color: #FFF;
+    margin: 50px 0;
+}
+
+.home-photos {
+        position: relative;
+}
+
+.home-photo {
+    position: absolute;
+    max-width: 200px;
+    height: auto;
+    box-shadow: 0px 0px 10px black;
+    margin: 0 auto;
+}
+
+.photo1 {
+    left: 75px;
+    top: 25px;
+    content: url('https://img.brickowl.com/files/image_cache/larger/lego-emmet-with-lopsided-smile-and-no-plate-on-leg-minifigure-25.jpg');
+}
+
+.photo2 {
+    top: 50px;
+    left: 225px;
+    content: url('https://img.brickowl.com/files/image_cache/larger/lego-police-woman-minifigure-28.jpg');
+}
 
 /* Minifigure Display */
 
@@ -71,15 +94,11 @@ nav ul a {
     padding: 0;
     background-color: rgb(45, 128, 173);
     color: white;
-    /* border-left: black solid 3px;
-    border-right: black solid 3px;
-    border-bottom: black solid 3px; */
 }
 
 .collapsible-header {
     background-color: rgb(241, 241, 20);
     color: black;
-    /* border: black solid 3px; */
 }
 
 .collapsible-header:hover {
@@ -101,7 +120,6 @@ nav ul a {
 
 .edit {
     width: 100%;
-    /* border-top: black solid 3px; */
     color: black;
     background-color: rgb(241, 241, 20);
     height: 55px;
@@ -204,6 +222,17 @@ li.active .collapsible-header .material-icons.iconremove{
         float: left;
         margin-top: 0;
     }
+    .home-section-container {
+        padding: 30px;
+    }
+    .photo1 {
+        left: 25px;
+        top: 25px;
+    }
+    .photo2 {
+        top: 100px;
+        left: 150px;
+    }
 }
 
 @media(max-width: 700px) {
@@ -223,6 +252,6 @@ li.active .collapsible-header .material-icons.iconremove{
         text-align: center;
     }
     .header-img {
-    content: url('../images/lego-mobile.png');
-    margin-top: 20px;
+        content: url('../images/lego-mobile.png');
+        margin-top: 20px;
 }

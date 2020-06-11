@@ -3,12 +3,13 @@
 
 <div class="row">
     <div class="banner">The Minifigures</div>
-{% for minifigure in minifigures %}
+
+    {% for minifigure in minifigures %}
     <div class="col s12 m6 l3 minifig-container">
     
         <ul class="collapsible popout">
         
-            <li>
+            <li class="list-container">
             
                 <img src="{{ url_for('file', filename=minifigure.photo) }}" class="photo responsive-img"/>
                 <div class="collapsible-header"><i class="material-icons iconadd">expand_more</i><i class="material-icons iconremove">expand_less</i><strong>{{minifigure.minifigure_name}}</strong></div>
@@ -37,7 +38,7 @@
         </ul>
         
     </div>
-{% endfor %}
+    {% endfor %}
 </div>
 
 

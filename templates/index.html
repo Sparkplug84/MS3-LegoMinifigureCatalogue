@@ -1,37 +1,54 @@
 {% extends 'base.html' %} {% block content %}
 
 <section>
-    <div class="row">
-
-        <div class="col s12 m12 l8 right">
-            <img class="header-img">
-        </div>
-
-        <div class="col s12 m12 l4">
-            <div class="callout-container">
-                <h3 class="callout-header">Welcome to the Lego Minifigure Catalogue</h3>
-                <a href="{{ url_for('get_minifigures') }}" class="waves-effect waves-light btn yellow-btn callout-btn">View Catalogue</a>
-                <a href="{{ url_for('add_minifig') }}" class="waves-effect waves-light btn yellow-btn callout-btn">Add a Minifig</a>
-            </div>
-        </div>
-        
-        
+  <div class="row">
+    <div class="col s12 m12 l8 right">
+      <img class="header-img" />
     </div>
+
+    <div class="col s12 m12 l4">
+      <div class="callout-container">
+        <h3 class="callout-header">Welcome to the Lego Minifigure Catalogue</h3>
+        <a
+          href="{{ url_for('get_minifigures') }}"
+          class="waves-effect waves-light btn yellow-btn callout-btn"
+          >View Catalogue</a
+        >
+        <a
+          href="{{ url_for('add_minifig') }}"
+          class="waves-effect waves-light btn yellow-btn callout-btn"
+          >Add a Minifig</a
+        >
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="callout">
+<section class="home-section-container">
   <div class="row">
-    <div class="col s12 m8 l8">
-      <h3>Welcome to the Lego Minifigure Catalogue</h3>
+    <div class="col s12 m6 l6">
+        <h4>How does it work?</h4>
       <p>
         Are you a collector of Lego Minifigures, or just a Lego lover in
         general, then check out our amazing catalogue of Lego Minifigures. Add
         you own and help to build the catalogue!
       </p>
+      <p>
+        The Lego Minifugure Catalogue is a unique community of users who come
+        together and share their love of Lego by uploading photos of their own
+        minifigures for the pleasure of all users.
+      </p>
+      <p>
+      Come and join us and don't miss out on the fun!
+      </p>
     </div>
-  </div>
-  <div class="col s12 m4 l4">
-    <div class="callout-photos"></div>
+
+    <div class="col s12 m6 l6">
+      <div class="home-photos">
+        <img class="home-photo photo1" />
+        <img class="home-photo photo2" />
+      </div>
+    </div>
   </div>
 </section>
 
