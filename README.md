@@ -2,7 +2,7 @@
 
 ## Milestone Project 3 – Data Centric Development
 
-## Lego Minifigures Catalogue – Flask application using MongoDB
+## Lego Minifigures Catalogue – Python Flask application using MongoDB
 
 The live website hosted by Heroku can be viewed [here](https://lego-minifigure-catalogue.herokuapp.com/).
 
@@ -71,6 +71,25 @@ As a developer I would like:
 ### Goal
 
 My goal for this project was to create a fun, user friendly and interactive experience for lovers of Lego minifigures. The website will be clear and minimal to provide users with the best experience whilst learning how to use the catalogue. My aim is to make the users feel like they’re part of a community of fellow Lego fans that buildup the catalogue together and help to keep it maintained.
+
+## Structure
+
+### Features
+
+1.	A Lego minifigure head is used as my website logo along with the name of the website in the top left corner of the navigation bar. This is directly imported from a URL on the internet. I think it is a very appropriate logo for the content of the site. The icon and name are together also a link to the home page from anywhere on the site, which a is fairly standard feature of modern websites.
+2.  A collapsible navbar element has been implemented for medium and smaller screens. The menu is hidden inside the 'hamburger' icon and the navbar sweeps in from the right when clicked.
+3.	A Lego minifigures photo is used as the backdrop of the callout section of the home page. I imported this photo on to the development environment this time as I modified it before upload so that it was cropped a little more. On large screens this appears on the right side of the callout section and moves to the top of the callout section on medium sized (tablet) screens so that the image doesn’t appear too small on this medium screens.
+4.	A different photo was used on the callout section for mobile devices. The original photo appears too small at mobile screen size to have the desired effect and experience for the user. This photo is more square in shape, to fit the long mobile screen shape better and shows different minifigures but closer again.
+5.	Callout section shows the title of the website along with 2 buttons to either view the catalogue or add a minifig. I think this is a very important part of modern websites that users have buttons to draw them in, when they first arrive, and direct them to other parts of the website, other than using the navbar. In larger screens this section of the callout appears on the left side of the screen and moves under the main photo for medium sized screens, with the website name to the left and the buttons to the right. For mobile devices the elements are all stack on top of one another with the photo at the top, the website name under and the buttons under that. All of this still fits inside a modern standard phone screen size so the user doesn’t have to scroll down to see the whole callout section.
+6.	Under the callout section is another section in a different colour to provide some short explanation to the user as to what the site is about and how to use it.
+7.	At the bottom of the page is the footer, again in a different colour to clearly differentiate a different section of the website. This contains links and info about the site.
+8.	On the ‘View Catalogue’ page the user can view all the current minifigs that have been uploaded onto the site. This initially appears as just a photo and minifig name under with a down arrow beside the name to indicate that more information is available. When you click on the name an additional element appears showing the information associated with that minifig along with 2 other functions, an edit minifig button and a delete minifig button. The arrow beside the name now points up, indicating the associated info can be collapsed again.
+9.	When the user clicks on a minifig to reveal the associated info and then clicks on ‘Edit Minifigure’, they are brought to a form to fill in where all the current info for that minifigure is already filled in, therefore if the user only wants to change one field they do not need to fill in the rest of the form. When the user clicks ‘Edit Minifigure ’ at the bottom of the form, the information will be updated and the user will be return to the catalogue where they can view the minifig again and see the updated info.
+10.	When the user clicks on a minifig to reveal the associated info and then clicks on ‘Delete Minifigure’ the minifigure will then disappear from view for all users however it will not be completely deleted from the database so that the administrator (myself) can always retrieve the deleted minifigure in the event that it was deleted by accident.
+11.	When the user wants to add their own minifig they can click on the ‘Add Minifigure’ button on the homepage callout or navbar and they will be directed to a form to fill out, similar to the edit minifigure form. In this case though they also have the option to upload a photo of their own minifig. Only the photo field will be required and all other fields can be filled if the user knows the information. If not they can leave it blank and that gives other users the opportunity to edit the minifig at a later time and keep the catalogue up to date. Most of the form fields are drop down menus, provided by the database, giving the users a range of options to choose from. This gives consistency as to how the info is presented on the website. When the form is filled out and submitted the user will be redirected back to the catalogue to see their uploaded minifigure.
+12.	On the ‘Theme Management’ page the user will have the option to add new Lego themes to the website, should some new ones become available or if existing themes do not yet appear on the website. Once new themes are added they will also appear in the drop down list within the add minifg and edit minfig forms enabling new minifig uploads to use the new themes if necessary.
+13.	Users will also have the opportunity to edit and delete existing themes, in the event that the theme is not correct or has been discontinued in the Lego world. To do this users must click on a theme on the ‘Theme Management’ page and a collapsible element will appear showing 2 options, one for edit and one for delete.
+
 
 ## Sketelon
 
