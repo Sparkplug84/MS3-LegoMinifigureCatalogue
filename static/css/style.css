@@ -235,6 +235,15 @@ li.active .collapsible-header .material-icons.iconremove{
     }
 }
 
+@media(max-width: 992px) {
+    nav .brand-logo {
+        left: 0;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+
 @media(max-width: 700px) {
     .callout-btn {
         margin: 10px auto;
@@ -254,4 +263,25 @@ li.active .collapsible-header .material-icons.iconremove{
     .header-img {
         content: url('../images/lego-mobile.png');
         margin-top: 20px;
+    }
+    .photo2 {
+        top: 150px;
+        left: 50px;
+    }
+    .photo1 {
+        top: 0;
+        left: 0;
+    }
+    .home-section-container {
+        padding: 60px;
+        height: 850px;
+}
+
+@media(max-width: 500px) {
+    nav .brand-logo {
+        font-size: 1.5rem;
+    }
+    .home-section {
+        text-align: center;
+    }
 }
