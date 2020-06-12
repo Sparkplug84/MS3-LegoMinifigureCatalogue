@@ -24,6 +24,14 @@ nav ul a {
     color: black;
 }
 
+nav .button-collapse {
+    float: right;
+}
+
+nav a {
+    color: #000
+}
+
 /* index */
 
 .header-img {
@@ -241,6 +249,9 @@ li.active .collapsible-header .material-icons.iconremove{
         -webkit-transform: translateX(0);
         transform: translateX(0);
     }
+    .form {
+        width: 70%;
+    }
 }
 
 
@@ -275,6 +286,8 @@ li.active .collapsible-header .material-icons.iconremove{
     .home-section-container {
         padding: 60px;
         height: 850px;
+    }
+    
 }
 
 @media(max-width: 500px) {
@@ -283,5 +296,8 @@ li.active .collapsible-header .material-icons.iconremove{
     }
     .home-section {
         text-align: center;
+    }
+    .form {
+        width: 90%;
     }
 }
