@@ -1,45 +1,86 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="row">
-    <div class="banner">The Minifigures</div>
-
-    {% for minifigure in minifigures %}
-    <div class="col s12 m6 l3 minifig-container">
-    
-        <ul class="collapsible popout">
-        
-            <li class="list-container">
-            
-                <img src="{{ url_for('file', filename=minifigure.photo) }}" class="photo responsive-img"/>
-                <div class="collapsible-header"><i class="material-icons iconadd">expand_more</i><i class="material-icons iconremove">expand_less</i><strong>{{minifigure.minifigure_name}}</strong></div>
-                <div class="collapsible-body">
-                    <div class="list-item"><strong>Theme:</strong>
-                        <span class="right">{{minifigure.theme_name}}</span>
-                    </div>
-                    <div class="list-item"><strong>Age:</strong>
-                        <span class="right">{{minifigure.age_range}}</span>
-                    </div>
-                    <div class="list-item"><strong>Feature:</strong>
-                        <span class="right">{{minifigure.feature}}</span>
-                    </div>
-                    <div class="list-item"><strong>Parts:</strong>
-                        <span class="right">{{minifigure.number_of_parts}}</span>
-                    </div>
-                    <div class="list-item"><strong>Rarity:</strong>
-                        <span class="right">{{minifigure.rarity_name}}</span>
-                    </div>
-                    <a class="edit-link" href="{{ url_for('edit_minifig', minifigure_id=minifigure._id) }}"><div class="edit list-item">Edit Minifigure<i class="material-icons chevron_right">chevron_right</i></div></a>
-                    <a class="edit-link" href="{{ url_for('delete_minifig', minifigure_id=minifigure._id) }}"><div class="edit list-item">Delete Minifigure<i class="material-icons chevron_right">chevron_right</i></div></a>
-                </div>
-            
-            </li>
-            
-        </ul>
-        
-    </div>
-    {% endfor %}
+  <div class="banner">
+    The Minifigures
+  </div>
+  <div class="input-field col s12 m6 l3">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option id="searchName" value="1">Name</option>
+      <option id="searchTheme" value="2">Theme</option>
+      <option id="searchAge" value="3">Age</option>
+    </select>
+    <label>Filter results by...</label>
+  </div>
+  <div id="search-box" class="input-field col s12 m6 l3 d-none">
+    <form>
+        <input id="minifig_name" type="text" class="validate" /><span><a href="" class="search-btn"><i class="material-icons">search</i></a></span>
+        <label for="minifig_name">Enter name</label>
+    </form>
+  </div>
 </div>
+
+<div class="row">
+  {% for minifigure in minifigures %}
+  <div class="col s12 m6 l3 minifig-container">
+    <ul class="collapsible popout">
+      <li class="list-container">
+        <img
+          src="{{ url_for('file', filename=minifigure.photo) }}"
+          class="photo responsive-img"
+        />
+        <div class="collapsible-header">
+          <i class="material-icons iconadd">expand_more</i
+          ><i class="material-icons iconremove">expand_less</i
+          ><strong>{{minifigure.minifigure_name}}</strong>
+        </div>
+        <div class="collapsible-body">
+          <div class="list-item">
+            <strong>Theme:</strong>
+            <span class="right">{{minifigure.theme_name}}</span>
+          </div>
+          <div class="list-item">
+            <strong>Age:</strong>
+            <span class="right">{{minifigure.age_range}}</span>
+          </div>
+          <div class="list-item">
+            <strong>Feature:</strong>
+            <span class="right">{{minifigure.feature}}</span>
+          </div>
+          <div class="list-item">
+            <strong>Parts:</strong>
+            <span class="right">{{minifigure.number_of_parts}}</span>
+          </div>
+          <div class="list-item">
+            <strong>Rarity:</strong>
+            <span class="right">{{minifigure.rarity_name}}</span>
+          </div>
+          <a
+            class="edit-link"
+            href="{{ url_for('edit_minifig', minifigure_id=minifigure._id) }}"
+            ><div class="edit list-item">
+              Edit Minifigure<i class="material-icons chevron_right"
+                >chevron_right</i
+              >
+            </div></a
+          >
+          <a
+            class="edit-link"
+            href="{{ url_for('delete_minifig', minifigure_id=minifigure._id) }}"
+            ><div class="edit list-item">
+              Delete Minifigure<i class="material-icons chevron_right"
+                >chevron_right</i
+              >
+            </div></a
+          >
+        </div>
+      </li>
+    </ul>
+  </div>
+  {% endfor %}
+</div>
+
 
 
 {% endblock %}
