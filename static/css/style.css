@@ -103,6 +103,11 @@ nav a {
     border: 1px solid #000;
     border-radius: 25px;
     display: inline;
+    padding-left: 10px;
+}
+
+#name_placeholder {
+    left: 1.5rem;
 }
 
 .search-btn {

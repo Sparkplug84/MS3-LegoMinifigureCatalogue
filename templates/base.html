@@ -59,6 +59,13 @@
         $(".collapsible").collapsible();
         $("select").material_select();
         $(".button-collapse").sideNav();
+        // The following function was found as a soluction on a Github article regarding 
+        // a glitch with Materialize dropdown menus opening and immediately disappearing 
+        // after the first click
+        $(document).on("click", ".select-wrapper", function (event) {
+            event.stopPropagation();
+        });
+        
       });
     </script>
     <script type="text/javascript" src="{{url_for('static', filename='js/main.js')}}"></script>
