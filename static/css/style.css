@@ -104,6 +104,8 @@ nav a {
     border-radius: 25px;
     display: inline;
     padding-left: 10px;
+    position: absolute;
+    z-index: 0;
 }
 
 #name_placeholder {
@@ -112,6 +114,19 @@ nav a {
 
 .search-btn {
     display: inline;
+}
+
+.search {
+    position: relative;
+}
+
+.search-icon {
+    float: right;
+    margin-right: -58px;
+    font-size: 35px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 5px;
 }
 
 .collapsible-body-container {
@@ -230,6 +245,10 @@ li.active .collapsible-header .material-icons.iconremove{
     background-color: rgb(12, 100, 148);
 }
 
+.theme-btn {
+    height: 40px;
+}
+
 
 /* Media Queries */
 
@@ -271,6 +290,17 @@ li.active .collapsible-header .material-icons.iconremove{
     }
     .form {
         width: 70%;
+    }
+    #minifig_name {
+        width: 75%;
+    }
+    .search-icon {
+        float: right;
+        margin-right: 15px;
+        font-size: 35px;
+        border: 1px solid black;
+        border-radius: 50%;
+        padding: 5px;
     }
 }
 

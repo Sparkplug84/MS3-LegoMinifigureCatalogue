@@ -132,10 +132,18 @@ def add_theme():
 
 @app.route('/get_minifigure_theme/<theme_name>')
 def get_minifigure_theme(theme_name):
-    print(theme_name)
     minifigure_theme = mongo.db.minifigures.find(
         {'theme_name': theme_name})
-    return render_template("minifigs.html", minifigure_theme=minifigure_theme)
+    return render_template("minifigs.html", minifigure_theme=minifigure_theme, themes=mongo.db.themes.find(),
+                            age=mongo.db.age.find())
+
+
+@app.route('/get_minifigure_age/<age_range>')
+def get_minifigure_age(age_range):
+    minifigure_age = mongo.db.minifigures.find(
+        {'age_range': age_range})
+    return render_template("minifigs.html", minifigure_age=minifigure_age, themes=mongo.db.themes.find(),
+                            age=mongo.db.age.find())
 
 
 if __name__ == '__main__':
