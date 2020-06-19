@@ -59,7 +59,7 @@ nav a {
     padding: 60px;
     background-color: rgb(0, 109, 183);
     color: #FFF;
-    margin: 50px 0;
+    margin: 50px 0 0;
 }
 
 .home-photos {
@@ -208,6 +208,7 @@ li.active .collapsible-header .material-icons.iconremove{
 
 .form {
     width: 50%;
+    margin-bottom: 100px;
 }
 
 .btn i {
@@ -219,6 +220,7 @@ li.active .collapsible-header .material-icons.iconremove{
 .themes-container {
     text-align: center;
     width: 80%;
+    margin-bottom: 100px;
 }
 
 .add-theme {
@@ -249,6 +251,50 @@ li.active .collapsible-header .material-icons.iconremove{
     height: 40px;
 }
 
+/* Footer */
+
+.page-footer {
+    background-color: #000000ab;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.container {
+    width: 100%;
+}
+
+#about-section,
+#social-links {
+    padding: 50px 72px;
+}
+
+.footer-img {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+}
+
+.about-img {
+    content: url('../images/minifigreading.jpg');
+}
+
+.social-img {
+    content: url('../images/minifigphone.jpg');
+}
+
+.white-text {
+    display: inline;
+    margin-left: 10px;
+}
 
 /* Media Queries */
 
