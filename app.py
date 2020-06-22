@@ -45,7 +45,7 @@ def insert_minifig():
         photo = request.files['photo']
         mongo.save_file(photo.filename, photo)
         mongo.db.minifigures.insert_one({'photo': photo.filename,
-                                         'minifigure_name': request.form.get('minifigure_name'),
+                                         'minifigure_name': request.form.get('minifigure_name').lower(),
                                          'theme_name': request.form.get('theme_name'),
                                          'age_range': request.form.get('age_range'),
                                          'feature': request.form.get('feature'),
@@ -75,7 +75,7 @@ def edit_minifig(minifigure_id):
 def update_minifig(minifigure_id):
     mongo.db.minifigures.update_one({'_id': ObjectId(minifigure_id)},
                                     {"$set": {
-                                        'minifigure_name': request.form.get('minifigure_name'),
+                                        'minifigure_name': request.form.get('minifigure_name').lower(),
                                         'theme_name': request.form.get('theme_name'),
                                         'age_range': request.form.get('age_range'),
                                         'feature': request.form.get('feature'),
@@ -151,7 +151,7 @@ def get_minifigure_name():
     if request.method == "POST":
         print(request.form['minifigure_name'])
         minifigure_name_search = mongo.db.minifigures.find(
-            {'minifigure_name': request.form['minifigure_name']})
+            {'minifigure_name': request.form['minifigure_name'].lower()})
         print(minifigure_name_search)
         return render_template("minifigs.html", minifigure_name_search=minifigure_name_search, 
                 themes=mongo.db.themes.find(), age=mongo.db.age.find())
