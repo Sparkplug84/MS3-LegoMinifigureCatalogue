@@ -155,8 +155,6 @@ def get_minifigure_name():
         print(minifigure_name_search)
         return render_template("minifigs.html", minifigure_name_search=minifigure_name_search, 
                 themes=mongo.db.themes.find(), age=mongo.db.age.find())
-    else:
-        print('No records with that name found. Please try again.')
 
 
 if __name__ == '__main__':
