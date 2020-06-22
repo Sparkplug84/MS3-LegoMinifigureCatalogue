@@ -141,6 +141,11 @@ nav a {
     vertical-align: super;
 }
 
+.row-format {
+    margin: 0;
+    padding: 0;
+}
+
 .collapsible-body-container {
     border: black solid 3px;
 }
@@ -261,6 +266,21 @@ li.active .collapsible-header .material-icons.iconremove{
 
 .theme-btn {
     height: 40px;
+    width: 90%;
+    line-height: 40px;
+    padding: 0;
+}
+
+.filter-icon {
+    vertical-align: sub;
+    padding-left: 10px;
+}
+
+.reset-filter {
+    height: 40px;
+    width: 90%;
+    line-height: 40px;
+    padding: 0;
 }
 
 /* Footer */
@@ -351,6 +371,9 @@ main {
         top: 100px;
         left: 150px;
     }
+    #minifig_name {
+        width: 70%;
+    }
 }
 
 @media(max-width: 992px) {
@@ -361,10 +384,7 @@ main {
     }
     .form {
         width: 70%;
-    }
-    #minifig_name {
-        width: 80%;
-    }
+    }    
 }
 
 
@@ -400,7 +420,12 @@ main {
         padding: 40px;
         height: 850px;
     }
-    
+    #minifig_name {
+        width: 80%;
+    }
+    .mobile-centre {
+        text-align-last: center;
+    }
 }
 
 @media(max-width: 500px) {
@@ -413,4 +438,11 @@ main {
     .form {
         width: 90%;
     }
+}
+
+@media(min-width: 600px) and (max-width: 700px) {
+    #minifig_name {
+        width: 65%;
+    }
+    
 }
