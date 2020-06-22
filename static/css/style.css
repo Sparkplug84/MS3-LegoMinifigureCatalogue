@@ -106,27 +106,29 @@ nav a {
     padding-left: 10px;
     position: absolute;
     z-index: 0;
+    width: 75%;
 }
 
 #name_placeholder {
     left: 1.5rem;
 }
 
-.search-btn {
-    display: inline;
-}
-
 .search {
     position: relative;
 }
 
-.search-icon {
+.search-btn {
+    display: inline;
     float: right;
-    margin-right: -58px;
-    font-size: 35px;
-    border: 1px solid black;
     border-radius: 50%;
     padding: 5px;
+    height: 47px;
+    width: 47px;
+}
+
+.search-icon {
+    margin: 0;
+    vertical-align: super;
 }
 
 .collapsible-body-container {
@@ -338,15 +340,7 @@ main {
         width: 70%;
     }
     #minifig_name {
-        width: 75%;
-    }
-    .search-icon {
-        float: right;
-        margin-right: 15px;
-        font-size: 35px;
-        border: 1px solid black;
-        border-radius: 50%;
-        padding: 5px;
+        width: 80%;
     }
 }
 

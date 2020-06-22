@@ -5,7 +5,7 @@
     The Minifigures
   </div>
 
-  <!-- Search Filter -->
+  <!-- Search options -->
   <div class="row">
     <div class="input-field col s12 m6 l3">
       <select id="searchOptions" onchange="addSearch()">
@@ -17,40 +17,67 @@
       <label>Filter results by...</label>
     </div>
 
+    <!-- Search Filter by name -->
+
     <div id="search-box" class="input-field col s12 m6 l3 d-none">
-      <form class="search">
-        <input id="minifig_name" type="text" class="validate" />
+      <form class="search" action="{{ url_for('get_minifigure_name') }}" method="POST">
+        <input id="minifig_name" type="text" class="validate" name="minifigure_name" />
         <span>
-            <a href="" class="search-btn"><i class="material-icons search-icon">search</i></a>
+          <button class="btn waves-effect waves-light search-btn yellow-btn" type="submit">
+            <i class="material-icons right search-icon">search</i>
+          </button>
         </span>
         <label id="name_placeholder" for="minifig_name">Enter name</label>
       </form>
     </div>
 
+    <!-- Search Filter by theme -->
+
     <div id="theme-box" class="input-field col s12 m6 l3 d-none">
-        <a class="dropdown-button btn waves-effect waves-light yellow-btn theme-btn" href="#" data-activates="dropdown1">
-        <i class="material-icons iconadd">expand_more</i>Choose Theme</a>
-        <!-- Dropdown Structure -->
-        <ul id="dropdown1" class="dropdown-content">
+      <a
+        class="dropdown-button btn waves-effect waves-light yellow-btn theme-btn"
+        href="#"
+        data-activates="dropdown1"
+      >
+        <i class="material-icons iconadd">expand_more</i>Choose Theme</a
+      >
+      <!-- Dropdown Structure -->
+      <ul id="dropdown1" class="dropdown-content">
         {% for theme in themes %}
-          <li><a href="{{ url_for('get_minifigure_theme', theme_name=theme.theme_name) }}">
-          {{theme.theme_name}}</a></li>
-        {% endfor %}  
-        </ul>
+        <li>
+          <a
+            href="{{ url_for('get_minifigure_theme', theme_name=theme.theme_name) }}"
+          >
+            {{theme.theme_name}}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
     </div>
+
+    <!-- Search Filter by age -->
 
     <div id="age-box" class="input-field col s12 m6 l3 d-none">
-        <a class="dropdown-button btn waves-effect waves-light yellow-btn theme-btn" href="#" data-activates="dropdown2">
-        <i class="material-icons iconadd">expand_more</i>Choose Age</a>
-        <!-- Dropdown Structure -->
-        <ul id="dropdown2" class="dropdown-content">
+      <a
+        class="dropdown-button btn waves-effect waves-light yellow-btn theme-btn"
+        href="#"
+        data-activates="dropdown2"
+      >
+        <i class="material-icons iconadd">expand_more</i>Choose Age</a
+      >
+      <!-- Dropdown Structure -->
+      <ul id="dropdown2" class="dropdown-content">
         {% for years in age %}
-          <li><a href="{{ url_for('get_minifigure_age', age_range=years.age_range) }}">
-          {{years.age_range}}</a></li>
-        {% endfor %}  
-        </ul>
+        <li>
+          <a
+            href="{{ url_for('get_minifigure_age', age_range=years.age_range) }}"
+          >
+            {{years.age_range}}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
     </div>
-
   </div>
 
   <!-- All Minifigs -->
@@ -119,7 +146,7 @@
     {% endfor %}
   </div>
 
-<!-- Minifigs by Theme -->
+  <!-- Minifigs by Theme -->
 
   <div class="row">
     {% for minifigure in minifigure_theme %} {% if loop.index0 % 4 == 0 and
@@ -185,7 +212,7 @@
     {% endfor %}
   </div>
 
-<!-- Minifigs by Age-->
+  <!-- Minifigs by Age-->
 
   <div class="row">
     {% for minifigure in minifigure_age %} {% if loop.index0 % 4 == 0 and
@@ -251,6 +278,71 @@
     {% endfor %}
   </div>
 
+  <!-- Minifigs by Name -->
+
+  <div class="row">
+    {% for minifigure in minifigure_name_search %} {% if loop.index0 % 4 == 0 and
+    loop.index0 != 0 %}
+  </div>
+  <div class="row">
+    {% endif %}
+    <div class="col s12 m6 l3 minifig-container">
+      <ul class="collapsible popout">
+        <li class="list-container">
+          <img
+            src="{{ url_for('file', filename=minifigure.photo) }}"
+            class="photo responsive-img"
+          />
+          <div class="collapsible-header">
+            <i class="material-icons iconadd">expand_more</i
+            ><i class="material-icons iconremove">expand_less</i
+            ><strong>{{minifigure.minifigure_name}}</strong>
+          </div>
+          <div class="collapsible-body">
+            <div class="list-item">
+              <strong>Theme:</strong>
+              <span class="right">{{minifigure.theme_name}}</span>
+            </div>
+            <div class="list-item">
+              <strong>Age:</strong>
+              <span class="right">{{minifigure.age_range}}</span>
+            </div>
+            <div class="list-item">
+              <strong>Feature:</strong>
+              <span class="right">{{minifigure.feature}}</span>
+            </div>
+            <div class="list-item">
+              <strong>Parts:</strong>
+              <span class="right">{{minifigure.number_of_parts}}</span>
+            </div>
+            <div class="list-item">
+              <strong>Rarity:</strong>
+              <span class="right">{{minifigure.rarity_name}}</span>
+            </div>
+            <a
+              class="edit-link"
+              href="{{ url_for('edit_minifig', minifigure_id=minifigure._id) }}"
+              ><div class="edit list-item">
+                Edit Minifigure<i class="material-icons chevron_right"
+                  >chevron_right</i
+                >
+              </div></a
+            >
+            <a
+              class="edit-link"
+              href="{{ url_for('delete_minifig', minifigure_id=minifigure._id) }}"
+              ><div class="edit list-item">
+                Delete Minifigure<i class="material-icons chevron_right"
+                  >chevron_right</i
+                >
+              </div></a
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
 
   {% endblock %}
 </div>

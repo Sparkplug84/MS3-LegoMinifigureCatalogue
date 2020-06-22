@@ -146,6 +146,19 @@ def get_minifigure_age(age_range):
                             age=mongo.db.age.find())
 
 
+@app.route('/get_minifigure_name', methods=['GET', 'POST'])
+def get_minifigure_name():
+    if request.method == "POST":
+        print(request.form['minifigure_name'])
+        minifigure_name_search = mongo.db.minifigures.find(
+            {'minifigure_name': request.form['minifigure_name']})
+        print(minifigure_name_search)
+        return render_template("minifigs.html", minifigure_name_search=minifigure_name_search, 
+                themes=mongo.db.themes.find(), age=mongo.db.age.find())
+    else:
+        print('No records with that name found. Please try again.')
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),

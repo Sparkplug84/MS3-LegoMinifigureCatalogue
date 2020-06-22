@@ -115,15 +115,15 @@ Within most buttons on the site I have also added icons to provide the user with
 For the font I wanted to go with something fun, modern and clear. I searched through Google fonts and decided upon ‘Ubuntu’. I took the link provided by Google and pasted it directly into my CSS file to become the default font for the whole site. There is a backup of San-Serif provided in the event that the browser being used is unable to access Google fonts.
 
 ## Technologies Used
-Gitpod – used as my IDE for the development of the website.
-HTML – used to write the code for the structure and layout of all templates in the site
-CSS – used for custom styling of many HTML elements. 
-Materialize – Materialize was used to provide the navbar, footer, forms, collapsible elements for each database record and the use of a grid system. Most of these imported elements have then been custom styled to suit this project.
-Javascript – Used to provide some simple interactive features of the website.
-jQuery – Used to initialize some Materialize components.
-Popper.JS – Used to aid the responsiveness of the website.
-Python – Used for the main functionality of the site. All CRUD (Create, Read, Update, Delete) functionality is provided by Python through flask and other imported technologies in the ‘app.py’ Python file such as PyMongo, flask PyMongo, 
-MongoDB – 
--
--
--
+* Gitpod – used as my IDE for the development of the website.
+* HTML – used to write the code for the structure and layout of all templates in the site
+* CSS – used for custom styling of many HTML elements. 
+* Materialize – Materialize was used to provide the navbar, footer, forms, collapsible elements for each database record and the use of a grid system. Most of these imported elements have then been custom styled to suit this project.
+* Javascript – Used to provide some simple interactive features of the website.
+* jQuery – Used to initialize some Materialize components.
+* Popper.JS – Used to aid the responsiveness of the website.
+* Python – Used for the main functionality of the site. All CRUD (Create, Read, Update, Delete) functionality is provided by Python through flask and other imported technologies in the ‘app.py’ Python file such as PyMongo, flask PyMongo, 
+* MongoDB – 
+* 
+* 
+* 
