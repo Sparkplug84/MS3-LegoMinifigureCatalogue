@@ -127,3 +127,47 @@ For the font I wanted to go with something fun, modern and clear. I searched thr
 * 
 * 
 * 
+
+## Testing
+
+### Issued found and solved throughout the development
+
+1.	* **Issue** – App not running in Heroku
+    * **Fix** – I needed to add the environment variables in Heroku and Gitpod but I had only added them in Gitpod. I also needed to update my requirements file as I had added more dependencies since I first created the file.
+    * **Result** – The app can now be run and viewed in Heroku
+
+2.	* **Issue** – For loop not working in page that displays all records from the database.
+    * **Fix** – I originally had the for loop, to display all records, outside a list item that contained all the information about the record. However the records was not displaying correctly the way I wanted it. I first tried moving the for loop outside the unordered list tag but eventually realized it needed to be outside the div tag so that a new div was created for each record and that for each div, it would take up the specified amount of horizontal space depending on the screen size.
+    * **Result** – The records now display clearly and horizontally the way I wanted them to.
+
+3.	* **Issue** – The photo that was uploaded by the user, from the add minifig form, was not rendering on the page displaying the records.
+    * **Fix** – To resolve this I had to rewrite the insert_minifig function so that the image was saved using a save_file method. The image along with all the other data from the form had to be manually created as a dictionary in the same function so that Mongo could interpret all the data together.
+                A separate function also had to be written to create a URL for each image, which is then retrieved within the HTML of the main display records page.
+    * **Result** – The image uploaded by the user can now be viewed on the main catalogue page along with all the associated data from the form.
+
+4.	* **Issue** – The function to update existing records was not working
+    * **Fix** – The original data populated the update form however when the data was changed and the update button was clicked to confirm the changes, the new data was not displayed on the record. This was a simple fix that I had overlooked when first writing the route. I needed to define the methods=[‘POST’] as like the add minifig function we are changing the database which requires a POST method.
+    * **Result** – When the update minifig form is filled in and the changes are confirmed the new data can now be viewed within the record on the main catalogue page.
+
+5.	* **Issue** – After a record was updated with extra or amended data, the image file disappeared from view on the updated record
+    * **Fix** – In the update records function I needed to use the $set keyword which is used to only update the key/value pairs defined on the function. All data from the undefined key/value pairs, for example the image,  would then remain the same. This $set key word is placed in the function before the dictionary of key/value pairs that are to be updated.
+    * **Result** – The update function now works as expected and the data can be changed whilst the image remains part of the record.
+
+6.	* **Issue** – I needed to create a delete function for the project but wanted to make it like a soft delete function where the record does not get deleted from the database.
+    * **Fix** – I added an extra key/value pair for every new record of ‘minifig-deleted’ and the value by default set to ‘False’.  This is something that the user cannot see. When the user clicks on delete minifig then instead of deleting completely the ‘minifig_deleted’ value changes to True.
+                The get_minifigure route then had to be modified to specify that only records with a key/value pair of ‘minifig_deleted’ that equals to False, would be displayed in the catalogue, otherwise they don’t appear but also don’t get deleted completely. That way I can always reinstate records that may have been deleted by accident as the data is still in the database.
+    * **Result** – When a user deletes the minfig records, it no longer appears in the catalogue but is still available in the Mongo database.
+
+7.	* **Issue** – Materialize navbar aligning in the middle of the screen on small and medium devices.
+    * **Fix** – When reviewing the site through Google Chrome development tools with the responsive view displayed the navbar items all aligned to the centre when the screen size was set to tablet or smaller. This was a relatively simple fix. I just needed to remove some of the materialize default classes from this element for smaller devices.
+    * **Result** – The navbar, when viewed on a smaller device, kept the layout of the large screen with the logo and site title on the left side and the menu or in this case the dropdown menu button, appeared on the right side of the navbar.
+
+8.	* **Issue** – Dropdown select filter function not working. When a theme is chosen from the dropdown menu, nothing happens.
+    * **Fix** – When trying to figure out this problem with a Code Institute tutor, we discovered that the href that I had specified inside the select options of the dropdown list, was not visible in the Chrome developer tools. This led me to discover that Materialize select options cannot contain <a> tags and therefore the reason that the function was not being called when a select option was chosen. I was advised by a Code institute mentor on slack to try a dropdown button instead of a dropdown select option. The dropdown button contains list items, which in turn can contain an <a> tag. This appeared to be the solution as the href was now visible on the Chrome developer tools.
+                Although the desired href was appearing in developer tools the function was still not filtering the results per theme or age. I was advised through slack to make sure I was looping through the filtered records on the page displaying the records and I had not done that yet. I copied the code block used to display all records and pasted it below wrapped in a new loop that looped through and displayed only the results of the selected theme or age.
+                The final sub issue within this general filter issue was that when the filter was finally working and the records for a single theme were only displayed the dropdown button menu was no longer populating to choose a different filter. This was a simple fix as I had not yet added the collections to the new filter routes and therefore they didn’t appear after the first filter was run.
+    * **Result** – The filter was working, only showing results from the theme or age range selected and another filter could be applied after the first to filter different options.
+
+9.	* **Issue** – Name filter function not working
+    * **Fix** – When I initially started writing this function I was passing a name parameter into the function like I had done with the dropdown menu parameters but I was advised on slack that this was not necessary as I would extract the name from the input form in form of a request just like in the add minifig route.
+    * **Result** – 
