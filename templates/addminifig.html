@@ -1,6 +1,31 @@
 {% extends 'base.html' %} {% block content %}
+<div class="row banner">
+    <h3>Add a Minifigure</h3>
+    <hr>
+    <div class="row" id="add-row">
+        <div class="col s12 m6 l6 left-align add-container">
+            <h5>To add your own minifigure and expand the catalogue, just fill out the form below.</h5>
+            <p>When taking a photo of your minifigure, remember the following:</p>
+            <ul id="add-list">
+                <li class="add-list">Take the photo in potrait, not landscape</li>
+                <li class="add-list">Take the photo in good light</li>
+                <li class="add-list">Make sure your minifig is in the centre of the photo</li>
+                <li class="add-list">Make sure your minifig has all the accessories included</li>
+            </ul>
+            <p class="add-paragraph">If the theme of your minifigure is not yet on the list below, head over to the Lego Themes page and add the new theme yourself.</p>
+            <a  href="{{ url_for('add_theme') }}"  
+                class="waves-effect waves-light btn yellow-btn">Add Theme</a>
+        </div>
+        <div class="col s12 m6 l6 add-container add-photos-container">
+            <div class="add-photos-container">
+                <img class="add-photo2"/><i class="material-icons check-icon">check</i>
+                <img class="add-photo1"/><i class="material-icons cross-icon">close</i>
+            </div>
+        </div>
+            
+    </div>
+</div>
 
-<h3>Add Minifigure</h3>
 <div class="row form">
   <form action="{{ url_for('insert_minifig') }}" method="POST" class="col s12" enctype="multipart/form-data">
     <div class="row">

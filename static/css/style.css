@@ -232,6 +232,61 @@ li.active .collapsible-header .material-icons.iconremove{
     margin-right: 10px;
 }
 
+.add-list,
+#add-list {
+    padding-left: 30px;
+    list-style-type: circle !important;
+    color: #FFF;
+}
+
+.add-photos-container {
+    position: relative;
+}
+
+.add-photo1 {
+    content: url('../images/batmanpotrait.jpg');
+    max-width: 200px;
+    box-shadow: 0px 0px 10px black;
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.add-photo2 {
+    content: url('../images/batmanlandscape.jpg');
+    max-width: 250px;
+    box-shadow: 0px 0px 10px black;
+    position: absolute;
+    left: 150px;
+    top: 100px;
+}
+
+.add-container {
+    padding: 50px !important;
+}
+
+.check-icon {
+    font-size: 75px;
+    color: #4bc74b;
+    position: absolute;
+    left: 145px;
+    top: 216px;
+    z-index: 1;
+}
+
+.cross-icon {
+    font-size: 75px;
+    color: #f82e2e;
+    position: absolute;
+    top: 177px;
+    left: 351px;
+}
+
+.add-paragraph {
+    margin-bottom: 20px;
+}
+
 /* Themes */
 
 .themes-container {
@@ -243,6 +298,10 @@ li.active .collapsible-header .material-icons.iconremove{
 .add-theme {
     float: left;
     margin-left: 24px;
+}
+
+.left-align{
+    text-align: left;
 }
 
 /* Buttons */
@@ -281,6 +340,7 @@ li.active .collapsible-header .material-icons.iconremove{
     width: 90%;
     line-height: 40px;
     padding: 0;
+    letter-spacing: 1.5px;
 }
 
 /* Footer */
@@ -374,6 +434,29 @@ main {
     #minifig_name {
         width: 70%;
     }
+    .add-photo1 {
+        max-width: 150px;
+        position: absolute;
+        left: 30px;
+        top: 50px;
+    }
+    .add-photo2 {
+        max-width: 200px;
+        position: absolute;
+        left: 75px;
+        top: 256px;
+    }
+    .add-container {
+        padding: 30px !important;
+    }
+    .check-icon {
+        left: 116px;
+        top: 196px;
+    }
+    .cross-icon {
+        top: 315px;
+        left: 222px;
+    }
 }
 
 @media(max-width: 992px) {
@@ -438,11 +521,67 @@ main {
     .form {
         width: 90%;
     }
+    .add-photo1 {
+        max-width: 150px;
+        float: left;
+    }
+    .add-photo2 {
+        max-width: 200px;
+        position: absolute;
+        left: 115px;
+        top: 50px;
+    }
+    .add-container {
+        padding: 30px !important;
+    }
+    .check-icon {
+        left: 96px;
+        top: 153px;
+        z-index: 1;
+    }
+    .cross-icon {
+        top: 110px;
+        left: 253px;
+    }
 }
 
 @media(min-width: 600px) and (max-width: 700px) {
     #minifig_name {
         width: 65%;
     }
-    
+    .add-photo1 {
+        position: absolute;
+        max-width: 150px;
+        left: 0px;
+        top: 70px;
+    }
+    .add-photo2 {
+        position: absolute;
+        max-width: 200px;
+        left: -20px;
+        top: 335px;
+    }
+    .add-container {
+        padding: 30px !important;
+    }
+    .check-icon {
+        left: 95px;
+        top: 216px;
+    }
+    .cross-icon {
+        top: 395px;
+        left: 118px;
+    }
+}
+
+@media(max-width: 500px) {
+    .add-photos-container {
+        height: 300px;
+    }
+}
+
+@media(min-width: 501px) and (max-width: 600px){
+    .add-photos-container {
+        height: 400px;
+    }
 }
