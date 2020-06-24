@@ -22,8 +22,18 @@ mongo = PyMongo(app)
 @app.route('/index_page')
 def index_page():
     if 'username' in session:
-        return render_template('index.hmtl', text='You are logged on as' + session['username'])
+        return render_template('index.html', text='You are logged on as' + session['username'])
     return render_template('index.html')
+
+
+@app.route('/login')
+def login():
+    return ''
+
+
+@app.route('/register' )
+def register():
+    return ''
 
 
 @app.route('/get_minifigures')
