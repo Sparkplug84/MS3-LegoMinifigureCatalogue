@@ -7,109 +7,120 @@
 </div>
 
 <!-- Search options -->
-<div class="row filter-row">
-  <p class="filter-info">
-    View the full catalogue below or filter the minifigs by name, theme or age.
-  </p>
-  <div class="input-field col s12 m4 l3">
-    <select id="searchOptions" onchange="addSearch()">
-      <option value="" disabled selected>Choose your option</option>
-      <option id="searchName" value="1">Name</option>
-      <option id="searchTheme" value="2">Theme</option>
-      <option id="searchAge" value="3">Age</option>
-    </select>
-    <label>Filter results by...</label>
-  </div>
+<div class="max-width">
+  <div class="row filter-row">
+    <p class="filter-info">
+      View the full catalogue below or filter the minifigs by name, theme or
+      age.
+    </p>
+    <div class="input-field col s12 m4 l3">
+      <select id="searchOptions" onchange="addSearch()">
+        <option value="" disabled selected>Choose your option</option>
+        <option id="searchName" value="1">Name</option>
+        <option id="searchTheme" value="2">Theme</option>
+        <option id="searchAge" value="3">Age</option>
+      </select>
+      <label>Filter results by...</label>
+    </div>
+    
 
-  <!-- Search Filter by name -->
+    <!-- Search Filter by name -->
 
-  <div id="search-box" class="input-field col s12 m4 l3 d-none">
-    <form
-      class="search"
-      action="{{ url_for('get_minifigure_name') }}"
-      method="POST"
-    >
-      <input
-        id="minifig_name"
-        type="text"
-        class="validate"
-        name="minifigure_name"
-      />
-      <span>
-        <button
-          class="btn waves-effect waves-light search-btn yellow-btn"
-          type="submit"
-        >
-          <i class="material-icons right search-icon">search</i>
-        </button>
-      </span>
-      <label id="name_placeholder" for="minifig_name">Enter name</label>
-    </form>
-  </div>
+    <div id="search-box" class="input-field col s12 m4 l3 d-none">
+      <form
+        class="search"
+        action="{{ url_for('get_minifigure_name') }}"
+        method="POST"
+      >
+        <input
+          id="minifig_name"
+          type="text"
+          class="validate"
+          name="minifigure_name"
+        />
+        <span>
+          <button
+            class="btn waves-effect waves-light search-btn yellow-btn"
+            type="submit"
+          >
+            <i class="material-icons right search-icon">search</i>
+          </button>
+        </span>
+        <label id="name_placeholder" for="minifig_name">Enter name</label>
+      </form>
+    </div>
 
-  <!-- Search Filter by theme -->
+    <!-- Search Filter by theme -->
 
-  <div id="theme-box" class="input-field col s12 m4 l3 d-none mobile-centre">
-    <a
-      class="dropdown-button btn waves-effect waves-light yellow-btn theme-btn"
-      href="#"
-      data-activates="dropdown1"
-    >Choose Theme
-      <i class="material-icons iconadd filter-icon">expand_more</i></a
-    >
-    <!-- Dropdown Structure -->
-    <ul id="dropdown1" class="dropdown-content">
-      {% for theme in themes %}
-      <li>
-        <a
-          href="{{ url_for('get_minifigure_theme', theme_name=theme.theme_name) }}"
-        >
-          {{theme.theme_name}}</a
-        >
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
+    <div id="theme-box" class="input-field col s12 m4 l3 d-none mobile-centre">
+      <a
+        class="dropdown-button btn waves-effect waves-light yellow-btn theme-btn"
+        href="#"
+        data-activates="dropdown1"
+        >Choose Theme
+        <i class="material-icons iconadd filter-icon">expand_more</i></a
+      >
+      <!-- Dropdown Structure -->
+      <ul id="dropdown1" class="dropdown-content">
+        {% for theme in themes %}
+        <li>
+          <a
+            href="{{ url_for('get_minifigure_theme', theme_name=theme.theme_name) }}"
+          >
+            {{theme.theme_name}}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
 
-  <!-- Search Filter by age -->
+    <!-- Search Filter by age -->
 
-  <div id="age-box" class="input-field col s12 m4 l3 d-none mobile-centre">
-    <a class="dropdown-button btn waves-effect waves-light yellow-btn theme-btn"
-      href="#" data-activates="dropdown2">Choose Age
-      <i class="material-icons iconadd filter-icon">expand_more</i></a>
-    <!-- Dropdown Structure -->
-    <ul id="dropdown2" class="dropdown-content">
-      {% for years in age %}
-      <li>
-        <a
-          href="{{ url_for('get_minifigure_age', age_range=years.age_range) }}"
-        >
-          {{years.age_range}}</a
-        >
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
+    <div id="age-box" class="input-field col s12 m4 l3 d-none mobile-centre">
+      <a
+        class="dropdown-button btn waves-effect waves-light yellow-btn theme-btn"
+        href="#"
+        data-activates="dropdown2"
+        >Choose Age
+        <i class="material-icons iconadd filter-icon">expand_more</i></a
+      >
+      <!-- Dropdown Structure -->
+      <ul id="dropdown2" class="dropdown-content">
+        {% for years in age %}
+        <li>
+          <a
+            href="{{ url_for('get_minifigure_age', age_range=years.age_range) }}"
+          >
+            {{years.age_range}}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
 
-  <!-- Cancel Filter -->
+    <!-- Cancel Filter -->
 
-  <div id="cancel-filter" class="input-field col s12 m4 l3 mobile-centre">
-    {% if isFilter %}
-    <a href="{{ url_for('get_minifigures') }}" class="btn waves-effect waves-light blue-btn reset-filter">
-      Reset Filter
-      <i class="material-icons iconadd filter-icon">cancel</i>
-    </a>
-    {% endif %}
+    <div id="cancel-filter" class="input-field col s12 m4 l3 mobile-centre">
+      {% if isFilter %}
+      <a
+        href="{{ url_for('get_minifigures') }}"
+        class="btn waves-effect waves-light blue-btn reset-filter"
+      >
+        Reset Filter
+        <i class="material-icons iconadd filter-icon">cancel</i>
+      </a>
+      {% endif %}
+    </div>
   </div>
 </div>
 
 <!-- All Minifigs -->
 
-<div class="row">
+<div class="row max-width">
   {% for minifigure in minifigures %} {% if loop.index0 % 4 == 0 and loop.index0
   != 0 %}
 </div>
-<div class="row">
+<div class="row max-width">
   {% endif %}
   <div class="col s12 m6 l3 minifig-container">
     <ul class="collapsible popout">

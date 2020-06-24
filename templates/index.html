@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<section>
+<section class="max-width">
   <div class="output">
     {{text|safe}}
   </div>
@@ -13,14 +13,14 @@
       <div class="callout-container">
         <h3 class="callout-header">Welcome to the Lego Minifigure Catalogue</h3>
         <a
+          href="{{ url_for('login_form') }}"
+          class="waves-effect waves-light btn yellow-btn callout-btn"
+          >Login / Sign Up</a
+        >
+        <a
           href="{{ url_for('get_minifigures') }}"
           class="waves-effect waves-light btn yellow-btn callout-btn"
           >View Catalogue</a
-        >
-        <a
-          href="{{ url_for('add_minifig') }}"
-          class="waves-effect waves-light btn yellow-btn callout-btn"
-          >Add a Minifig</a
         >
       </div>
     </div>
@@ -28,7 +28,7 @@
 </section>
 
 <section class="home-section-container">
-  <div class="row">
+  <div class="row max-width">
     <div class="col s12 m6 l7 home-section">
       <h4>What is the Lego Minifigure Catalogue?</h4>
       <hr />

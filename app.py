@@ -26,6 +26,11 @@ def index_page():
     return render_template('index.html')
 
 
+@app.route('/login_form')
+def login_form():
+    return render_template('login.html')
+
+
 @app.route('/login')
 def login():
     return ''

@@ -2,6 +2,11 @@ html {
     font-family: 'Ubuntu', sans-serif;
 }
 
+.max-width {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 
 /* Base Template */
 
@@ -102,9 +107,9 @@ nav a {
     padding: 20px;
 }
 
-.filter-row {
+/* .filter-row {
     margin: 0;
-}
+} */
 
 .filter-info {
     margin-left: 12px;
@@ -226,7 +231,6 @@ li.active .collapsible-header .material-icons.iconremove{
 
 .form {
     width: 50%;
-    margin-bottom: 100px;
 }
 
 .btn i {
