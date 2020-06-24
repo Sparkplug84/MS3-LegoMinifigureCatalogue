@@ -133,7 +133,7 @@ def add_theme():
 @app.route('/get_minifigure_theme/<theme_name>')
 def get_minifigure_theme(theme_name):
     minifigure_theme = mongo.db.minifigures.find(
-        {'theme_name': theme_name})
+        {'theme_name': theme_name, "minifig_deleted": False})
     return render_template("minifigs.html", minifigure_theme=minifigure_theme, themes=mongo.db.themes.find(),
                             age=mongo.db.age.find(), isFilter=True)
 
@@ -141,7 +141,7 @@ def get_minifigure_theme(theme_name):
 @app.route('/get_minifigure_age/<age_range>')
 def get_minifigure_age(age_range):
     minifigure_age = mongo.db.minifigures.find(
-        {'age_range': age_range})
+        {'age_range': age_range, "minifig_deleted": False})
     return render_template("minifigs.html", minifigure_age=minifigure_age, themes=mongo.db.themes.find(),
                             age=mongo.db.age.find(), isFilter=True)
 
@@ -149,10 +149,8 @@ def get_minifigure_age(age_range):
 @app.route('/get_minifigure_name', methods=['GET', 'POST'])
 def get_minifigure_name():
     if request.method == "POST":
-        print(request.form['minifigure_name'])
         minifigure_name_search = mongo.db.minifigures.find(
-            {'minifigure_name': request.form['minifigure_name'].lower()})
-        print(minifigure_name_search)
+            {'minifigure_name': request.form['minifigure_name'].lower(), "minifig_deleted": False})
         return render_template("minifigs.html", minifigure_name_search=minifigure_name_search, 
                 themes=mongo.db.themes.find(), age=mongo.db.age.find(), isFilter=True)
 

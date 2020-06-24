@@ -2,11 +2,6 @@ html {
     font-family: 'Ubuntu', sans-serif;
 }
 
-main {
-    flex: 1 0 auto;
-    max-width: 1400px;
-    margin: 0 auto;
-}
 
 /* Base Template */
 
