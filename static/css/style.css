@@ -45,6 +45,10 @@ nav a {
 
 /* index */
 
+.output {
+    text-align: right;
+}
+
 .header-img {
     content: url('../images/01195866_005.jpg');
     width: 100%;
