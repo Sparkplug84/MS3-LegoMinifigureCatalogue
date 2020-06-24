@@ -107,10 +107,6 @@ nav a {
     padding: 20px;
 }
 
-/* .filter-row {
-    margin: 0;
-} */
-
 .filter-info {
     margin-left: 12px;
 }
@@ -295,9 +291,11 @@ li.active .collapsible-header .material-icons.iconremove{
 /* Themes */
 
 .themes-container {
-    text-align: center;
     width: 80%;
     margin-bottom: 100px;
+    float: none;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .add-theme {

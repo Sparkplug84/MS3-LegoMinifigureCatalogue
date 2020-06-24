@@ -36,7 +36,7 @@ def login():
     return ''
 
 
-@app.route('/register' )
+@app.route('/register' methods=['POST', 'GET'])
 def register():
     return ''
 
