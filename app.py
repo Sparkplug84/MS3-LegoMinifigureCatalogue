@@ -65,6 +65,12 @@ def register():
     return render_template('register.html')
 
 
+@app.route('/log_out')
+def log_out():
+    session.clear()
+    return redirect(url_for('index_page'))
+
+
 @app.route('/get_minifigures')
 def get_minifigures():
     minifigures = mongo.db.minifigures.find({"minifig_deleted": False})
