@@ -8,8 +8,12 @@
       <div class="input-field col s12">
         <input id="username" type="text" class="validate" name="username" />
         <label for="username">Username</label>
+        <div class="existing-user">
+        {{text|safe}}
+        </div>
       </div>
     </div>
+    
 
     <div class="row">
       <div class="input-field col s12">

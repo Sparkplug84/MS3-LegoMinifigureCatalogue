@@ -45,7 +45,7 @@ nav a {
 
 /* index */
 
-.output {
+.login {
     text-align: right;
 }
 
@@ -295,11 +295,11 @@ li.active .collapsible-header .material-icons.iconremove{
 /* Themes */
 
 .themes-container {
-    width: 80%;
+    /* width: 80%; */
     margin-bottom: 100px;
-    float: none;
+    /* float: none; */
     max-width: 1400px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 .add-theme {
