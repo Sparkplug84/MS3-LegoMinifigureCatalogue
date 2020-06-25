@@ -23,7 +23,8 @@ mongo = PyMongo(app)
 @app.route('/index_page')
 def index_page():
     if 'username' in session:
-        return render_template('index.html', text='You are logged on as ' + session['username'])
+        return render_template('index.html',
+                                text='You are logged on as ' + session['username'])
     return render_template('index.html')
 
 
@@ -32,9 +33,19 @@ def login_form():
     return render_template('login.html')
 
 
-@app.route('/login')
+@app.route('/login', methods=['POST'])
 def login():
-    return ''
+    users = mongo.db.users
+    login_user = users.find_one({'name': request.form['username']})
+
+    if login_user:
+        if bcrypt.hashpw(request.form['password'].encode('utf-8'),
+                        login_user['password']) == login_user['password']:
+            session['username'] = request.form['username']
+            return redirect(url_for('index_page'))
+
+    return render_template('login.html',
+                            text='* Invalid username/password combination. Please try again...')
 
 
 @app.route('/register', methods=['POST', 'GET'])
@@ -48,7 +59,8 @@ def register():
             users.insert({'name': request.form['username'], 'password': hashpass})
             session['username'] = request.form['username']
             return redirect(url_for('index_page'))
-        return render_template('register.html', text='* That Username already exists, please try another...')
+        return render_template('register.html',
+                                text='* That username already exists, please try another...')
 
     return render_template('register.html')
 
@@ -56,8 +68,10 @@ def register():
 @app.route('/get_minifigures')
 def get_minifigures():
     minifigures = mongo.db.minifigures.find({"minifig_deleted": False})
-    return render_template("minifigs.html", minifigures=minifigures, themes=mongo.db.themes.find(),
-                           age=mongo.db.age.find())
+    return render_template("minifigs.html",
+                            minifigures=minifigures,
+                            themes=mongo.db.themes.find(),
+                            age=mongo.db.age.find())
 
 
 @app.route('/add_minifig')
