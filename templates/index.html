@@ -12,6 +12,21 @@
     <div class="col s12 m12 l4">
       <div class="callout-container">
         <h3 class="callout-header">Welcome to the Lego Minifigure Catalogue</h3>
+        {% if 'username' in session %}
+        
+        <a
+          href="{{ url_for('get_minifigures') }}"
+          class="waves-effect waves-light btn yellow-btn callout-btn"
+          >View Catalogue</a
+        >
+        <a
+          href="{{ url_for('add_minifig') }}"
+          class="waves-effect waves-light btn yellow-btn callout-btn"
+          >Add a Minifig</a
+        >
+
+        {% else %}
+
         <a
           href="{{ url_for('login_form') }}"
           class="waves-effect waves-light btn yellow-btn callout-btn"
@@ -22,6 +37,7 @@
           class="waves-effect waves-light btn yellow-btn callout-btn"
           >View Catalogue</a
         >
+        {% endif %}
       </div>
     </div>
   </div>
