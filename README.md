@@ -83,7 +83,20 @@ My goal for this project was to create a fun, user friendly and interactive expe
 12.	On the ‘Theme Management’ page the user will have the option to add new Lego themes to the website, should some new ones become available or if existing themes do not yet appear on the website. Once new themes are added they will also appear in the drop down list within the add minifg and edit minfig forms enabling new minifig uploads to use the new themes if necessary.
 13.	Users will also have the opportunity to edit and delete existing themes, in the event that the theme is not correct or has been discontinued in the Lego world. To do this users must click on a theme on the ‘Theme Management’ page and a collapsible element will appear showing 2 options, one for edit and one for delete.
 
+### Special Feature
+* **User Authentication** – User authentication is something we have not yet covered in the course however my mentor advised me to look into it as it would enhance my project and help to prevent anyone from just editing or deleting records.
+I did some research on the internet and found a very useful video on YouTube on how to set up a basic user authentication system for a flask application using sessions. I used most of the code in the video for my own system, changing a few lines.
+The functionality in the user system includes allowing new users create an account with a username and password. The password has some hash and encoding functionality added so even I, as administrator of the database, cannot see the actual password in the Mongo collection. If the user tries to use a username that already exists, they receive a message that the username is already taken and to try another. Once the user successfully registers a new account, they are immediately logged in and they can see that on the home page, where they are redirected to, with a text message in to the top right corner under the navbar.
+If an already registered user is returning to the site they have the option to log in. If the username and or password they enter are incorrect, they receive a warning and to try again. Again when they are logged in they can see this with a message in to the top right corner of the home page.
+I have also added further functionality to the buttons and navbar options, which change depending on whether a user is logged in or not. If a user is not logged in they can only view the home page or catalogue but not edit any records. Links to the add minifig and themes pages are not even visible. If they try to edit or delete any of the records in the catalogue they will be prompted to login or sign up. If a user is logged on then all functionality will be open to that user, the navbar will have more options and the homepage buttons will be different.
+
+
 ### Features left to implement
+1. I think a more extensive login and account system would be a good feature for the future. One which takes a user’s email address and notifies them if their record has been modified or deleted. 
+2. Tracking which users are doing which activities may be useful so you can see which users are modifying or deleting which records.
+3. An account page would also be useful for users so they can see their own profile and the records that they have added to the database.
+4. A chat feature so users can interact with one another if they want to discuss a particular record.
+
 
 ### Overall Structure
 For the structure of the site I wanted to start off with a large Lego minifigures image on the homepage to capture the users attention and give them a big clue as to what the website is about. Alongside the image will be a callout section with the title of the website and some links to the main sections of the website. 
@@ -169,5 +182,10 @@ For the font I wanted to go with something fun, modern and clear. I searched thr
     * **Result** – The filter was working, only showing results from the theme or age range selected and another filter could be applied after the first to filter different options.
 
 9.	* **Issue** – Name filter function not working
-    * **Fix** – When I initially started writing this function I was passing a name parameter into the function like I had done with the dropdown menu parameters but I was advised on slack that this was not necessary as I would extract the name from the input form in form of a request just like in the add minifig route.
-    * **Result** – 
+    * **Fix** – When I initially started writing this function I was passing a name parameter into the function like I had done with the dropdown menu parameters but I was advised on slack that this was not necessary as I would extract the name from the input form in the form of a request just like in the add minifig route. So I took the paramaters out and added a POST method to my route. On the next test the app was rendering a new page but with no results so the last advce I got was to check in the route if request.method = POST and then search on mongo, passing in the request form input. I also added some further functionality to this route by adding a lower method to the request form input so that all text entered is converted to lowercase to check the database where it is also lowercase. Results are then displayed capitalized.
+    * **Result** – After entering a name I know to be in the database the app returned that record. 
+
+10. * **Issue** - First time I tried to log in as a user I received an error message
+    * **Fix** – When I tried to log in using an account that I had successfully created through the registration form, I received an error message that the object had no encode attribute. After some searching on the internet and speaking with a fellow student on slack it became evident that some of the code I had copied from the video was not applicable. I had encoded the password that was stored in the database and compared it to the password passed through in the login form. However I only needed to encode the password passed through in the login form and compare it to the password in the database, which was of course already encoded from the registration form, so I didn’t need to encode it a second time.
+    * **Result** – The login system now allows existing users to log in.
+
