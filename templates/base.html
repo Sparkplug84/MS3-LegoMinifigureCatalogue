@@ -30,20 +30,35 @@
         <div class="nav-wrapper">
             <a href="{{ url_for('index_page') }}" class="brand-logo"><img class="lego-icon"></img><span class="logo-text">Lego Minifigure Catalogue</span></a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            
             <ul id="nav-mobile" class="right hide-on-med-and-down">
+                {% if 'username' in session %}
                 <li><a href="{{ url_for('index_page') }}">Home</a></li>
                 <li><a href="{{ url_for('get_minifigures') }}">Catalogue</a></li>
                 <li><a href="{{ url_for('add_minifig') }}">Add Minifig</a></li>
                 <li><a href="{{ url_for('get_themes') }}">Themes</a></li>
                 <li><a href="{{ url_for('log_out') }}">Log out</a></li>
+                {% else %}
+                <li><a href="{{ url_for('index_page') }}">Home</a></li>
+                <li><a href="{{ url_for('get_minifigures') }}">View Catalogue</a></li>
+                <li><a href="{{ url_for('login_form') }}">Login</a></li>
+                {% endif %}
             </ul>
+            
             <ul class="side-nav" id="mobile-demo">
+                {% if 'username' in session %}
                 <li><a href="{{ url_for('index_page') }}">Home</a></li>
                 <li><a href="{{ url_for('get_minifigures') }}">View Catalogue</a></li>
                 <li><a href="{{ url_for('add_minifig') }}">Add Minifig</a></li>
                 <li><a href="{{ url_for('get_themes') }}">Manage Themes</a></li>
                 <li><a href="{{ url_for('log_out') }}">Log out</a></li>
+                {% else %}
+                <li><a href="{{ url_for('index_page') }}">Home</a></li>
+                <li><a href="{{ url_for('get_minifigures') }}">View Catalogue</a></li>
+                <li><a href="{{ url_for('login_form') }}">Login</a></li>
+                {% endif %}
             </ul>
+            
         </div>
       </nav>
       
