@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% block content %}
-<div class="row banner">
+<div class="banner">
     <h3>Add a Minifigure</h3>
     <hr>
-    <div class="row" id="add-row">
-        <div class="col s12 m6 l6 left-align add-container">
+    <div class="row max-width" id="add-row">
+        <div class="col s12 m6 l7 left-align add-container">
             <h5>To add your own minifigure and expand the catalogue, just fill out the form below.</h5>
             <p>When taking a photo of your minifigure, remember the following:</p>
             <ul id="add-list">
@@ -16,7 +16,7 @@
             <a  href="{{ url_for('get_themes') }}"  
                 class="waves-effect waves-light btn yellow-btn">Add Theme</a>
         </div>
-        <div class="col s12 m6 l6 add-container add-photos-container">
+        <div class="col s12 m6 l5 add-container add-photos-container">
             <div class="add-photos-container">
                 <img class="add-photo2"/><i class="material-icons check-icon">check</i>
                 <img class="add-photo1"/><i class="material-icons cross-icon">close</i>

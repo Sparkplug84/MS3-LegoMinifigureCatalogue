@@ -7,8 +7,9 @@
 </div>
 
 <!-- Search options -->
-<div class="max-width">
-  <div class="row filter-row">
+<div>
+  <div class="row filter-row max-width">
+    <div class="filter-container">
     <p class="filter-info">
       View the full catalogue below or filter the minifigs by name, theme or
       age.
@@ -111,6 +112,7 @@
       </a>
       {% endif %}
     </div>
+    </div>
   </div>
 </div>
 
@@ -182,11 +184,11 @@
 
 <!-- Minifigs by Theme -->
 
-<div class="row">
+<div class="row max-width">
   {% for minifigure in minifigure_theme %} {% if loop.index0 % 4 == 0 and
   loop.index0 != 0 %}
 </div>
-<div class="row">
+<div class="row max-width">
   {% endif %}
   <div class="col s12 m6 l3 minifig-container">
     <ul class="collapsible popout">
@@ -248,11 +250,11 @@
 
 <!-- Minifigs by Age-->
 
-<div class="row">
+<div class="row max-width">
   {% for minifigure in minifigure_age %} {% if loop.index0 % 4 == 0 and
   loop.index0 != 0 %}
 </div>
-<div class="row">
+<div class="row max-width">
   {% endif %}
   <div class="col s12 m6 l3 minifig-container">
     <ul class="collapsible popout">
@@ -314,11 +316,11 @@
 
 <!-- Minifigs by Name -->
 
-<div class="row row-format">
+<div class="row row-format max-width">
   {% for minifigure in minifigure_name_search %} {% if loop.index0 % 4 == 0 and
   loop.index0 != 0 %}
 </div>
-<div class="row">
+<div class="row row-format max-width">
   {% endif %}
   <div class="col s12 m6 l3 minifig-container">
     <ul class="collapsible popout">
@@ -377,5 +379,69 @@
   </div>
   {% endfor %}
 </div>
+
+<!-- <div class="row max-width">
+  {% for minifigure in minifigure_name_search %} {% if loop.index0 % 4 == 0 and
+  loop.index0 != 0 %}
+</div>
+<div class="row max-width">
+  {% endif %}
+  <div class="col s12 m6 l3 minifig-container">
+    <ul class="collapsible popout">
+      <li class="list-container">
+        <img
+          src="{{ url_for('file', filename=minifigure.photo) }}"
+          class="photo responsive-img"
+        />
+        <div class="collapsible-header">
+          <i class="material-icons iconadd">expand_more</i
+          ><i class="material-icons iconremove">expand_less</i
+          ><strong>{{minifigure.minifigure_name.title()}}</strong>
+        </div>
+        <div class="collapsible-body">
+          <div class="list-item">
+            <strong>Theme:</strong>
+            <span class="right">{{minifigure.theme_name}}</span>
+          </div>
+          <div class="list-item">
+            <strong>Age:</strong>
+            <span class="right">{{minifigure.age_range}}</span>
+          </div>
+          <div class="list-item">
+            <strong>Feature:</strong>
+            <span class="right">{{minifigure.feature}}</span>
+          </div>
+          <div class="list-item">
+            <strong>Parts:</strong>
+            <span class="right">{{minifigure.number_of_parts}}</span>
+          </div>
+          <div class="list-item">
+            <strong>Rarity:</strong>
+            <span class="right">{{minifigure.rarity_name}}</span>
+          </div>
+          <a
+            class="edit-link"
+            href="{{ url_for('edit_minifig', minifigure_id=minifigure._id) }}"
+            ><div class="edit list-item">
+              Edit Minifigure<i class="material-icons chevron_right"
+                >chevron_right</i
+              >
+            </div></a
+          >
+          <a
+            class="edit-link"
+            href="{{ url_for('delete_minifig', minifigure_id=minifigure._id) }}"
+            ><div class="edit list-item">
+              Delete Minifigure<i class="material-icons chevron_right"
+                >chevron_right</i
+              >
+            </div></a
+          >
+        </div>
+      </li>
+    </ul>
+  </div>
+  {% endfor %}
+</div> -->
 
 {% endblock %}

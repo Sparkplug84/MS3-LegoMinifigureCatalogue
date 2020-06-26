@@ -115,6 +115,10 @@ nav a {
     margin-left: 12px;
 }
 
+.filter-container {
+    margin: 0 50px;
+}
+
 #minifig_name {
     border: 1px solid #000;
     border-radius: 25px;
@@ -295,11 +299,8 @@ li.active .collapsible-header .material-icons.iconremove{
 /* Themes */
 
 .themes-container {
-    /* width: 80%; */
     margin-bottom: 100px;
-    /* float: none; */
     max-width: 1400px;
-    /* margin: 0 auto; */
 }
 
 .add-theme {
@@ -436,7 +437,7 @@ main {
     }
     .photo2 {
         top: 100px;
-        left: 150px;
+        left: 130px;
     }
     #minifig_name {
         width: 70%;
@@ -477,6 +478,12 @@ main {
     }    
 }
 
+@media(min-width: 701px) {
+    .themes-container {
+        padding: 0 100px;
+    }
+}
+
 
 @media(max-width: 700px) {
     .callout-btn {
@@ -506,10 +513,7 @@ main {
         top: 0;
         left: 0;
     }
-    .home-section-container {
-        padding: 40px;
-        height: 850px;
-    }
+    
     #minifig_name {
         width: 80%;
     }
@@ -550,6 +554,16 @@ main {
         top: 110px;
         left: 253px;
     }
+    .add-photos-container {
+        height: 300px;
+    }
+    .home-photos {
+        margin: 20px 15px;
+    }
+    .home-section-container {
+        padding: 40px;
+        height: 880px;
+    }
 }
 
 @media(min-width: 600px) and (max-width: 700px) {
@@ -579,16 +593,57 @@ main {
         top: 395px;
         left: 118px;
     }
-}
-
-@media(max-width: 500px) {
-    .add-photos-container {
-        height: 300px;
+    .home-section-container {
+        padding: 40px;
+        height: 550px;
     }
+    
 }
 
 @media(min-width: 501px) and (max-width: 600px){
     .add-photos-container {
         height: 400px;
+    }
+    .photo2 {
+        top: 150px;
+        left: 150px;
+    }
+    .home-photos {
+        margin: 40px 30px;
+    }
+    .home-section-container {
+        padding: 40px;
+        height: 815px;
+    }
+}
+
+@media(min-width: 900px) and (max-width: 999px) {
+    .add-photo2 {
+        position: absolute;
+        max-width: 200px;
+        left: 150px;
+        top: 130px;
+    }
+    .cross-icon {
+        top: 180px;
+        left: 300px;
+    }
+}
+
+@media(min-width: 1000px) and (max-width: 1200px) {
+    .add-photo2 {
+        position: absolute;
+        max-width: 200px;
+    }
+    .add-photo1 {
+        position: absolute;
+        max-width: 180px;
+    }
+    .cross-icon {
+        left: 285px;
+    }
+    .check-icon {
+        top: 195px;
+        z-index: 1;
     }
 }
