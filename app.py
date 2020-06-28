@@ -73,7 +73,7 @@ def log_out():
 
 @app.route('/get_minifigures')
 def get_minifigures():
-    minifigures = mongo.db.minifigures.find({"minifig_deleted": False})
+    minifigures = mongo.db.minifigures.find({"minifig_deleted": False}).sort('minifigures', -1)
     return render_template("minifigs.html",
                             minifigures=minifigures,
                             themes=mongo.db.themes.find(),

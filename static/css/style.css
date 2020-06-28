@@ -126,7 +126,7 @@ nav a {
     padding-left: 10px;
     position: absolute;
     z-index: 0;
-    width: 75%;
+    width: 72%;
 }
 
 #name_placeholder {
@@ -515,7 +515,7 @@ main {
     }
     
     #minifig_name {
-        width: 80%;
+        width: 75%;
     }
     .mobile-centre {
         text-align-last: center;
