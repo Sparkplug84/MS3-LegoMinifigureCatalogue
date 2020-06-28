@@ -101,6 +101,7 @@ def insert_minifig():
                                          'feature': request.form.get('feature'),
                                          'number_of_parts': request.form.get('number_of_parts'),
                                          'rarity_name': request.form.get('rarity_name'),
+                                         'uploaded_by': session['username'],
                                          'minifig_deleted': False})
     return redirect(url_for('get_minifigures'))
 
