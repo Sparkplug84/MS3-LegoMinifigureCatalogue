@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, session
+from functools import wraps
+from flask import Flask, flash, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import bcrypt
@@ -71,6 +72,17 @@ def log_out():
     return redirect(url_for('index_page'))
 
 
+def login_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'username' in session:
+            return f(*args, **kwargs)
+        else:
+            return render_template('login.html',
+                            text='* You need to be logged in to continue!')
+    return wrap
+
+
 @app.route('/get_minifigures')
 def get_minifigures():
     minifigures = mongo.db.minifigures.find({"minifig_deleted": False}).sort('minifigures', -1)
@@ -112,6 +124,7 @@ def file(filename):
 
 
 @app.route('/edit_minifig/<minifigure_id>')
+@login_required
 def edit_minifig(minifigure_id):
     the_minifig = mongo.db.minifigures.find_one(
         {"_id": ObjectId(minifigure_id)})
