@@ -113,7 +113,7 @@ def insert_minifig():
                                          'minifigure_name': request.form.get('minifigure_name').lower(),
                                          'theme_name': request.form.get('theme_name'),
                                          'age_range': request.form.get('age_range'),
-                                         'feature': request.form.get('feature'),
+                                         'feature': request.form.get('feature').lower(),
                                          'number_of_parts': request.form.get('number_of_parts'),
                                          'rarity_name': request.form.get('rarity_name'),
                                          'uploaded_by': session['username'],
@@ -146,7 +146,7 @@ def update_minifig(minifigure_id):
                                         'minifigure_name': request.form.get('minifigure_name').lower(),
                                         'theme_name': request.form.get('theme_name'),
                                         'age_range': request.form.get('age_range'),
-                                        'feature': request.form.get('feature'),
+                                        'feature': request.form.get('feature').lower(),
                                         'number_of_parts': request.form.get('number_of_parts'),
                                         'rarity_name': request.form.get('rarity_name')
                                     }})
@@ -180,7 +180,7 @@ def edit_theme(theme_id):
 def update_theme(theme_id):
     mongo.db.themes.update_one({'_id': ObjectId(theme_id)},
                                {"$set": {
-                                   'theme_name': request.form.get('theme_name')}
+                                   'theme_name': request.form.get('theme_name').lower()}
                                 })
     return redirect(url_for('get_themes'))
 
@@ -195,7 +195,7 @@ def delete_theme(theme_id):
 @app.route('/insert_theme', methods=['POST'])
 @login_required
 def insert_theme():
-    mongo.db.themes.insert_one({'theme_name': request.form.get('theme_name')})
+    mongo.db.themes.insert_one({'theme_name': request.form.get('theme_name').lower()})
     return redirect(url_for('get_themes'))
 
 
