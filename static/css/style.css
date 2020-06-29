@@ -152,8 +152,8 @@ nav a {
 }
 
 .row-format {
-    margin: 0;
-    padding: 0;
+    display: table;
+    table-layout: fixed;
 }
 
 .collapsible-body-container {
@@ -180,8 +180,12 @@ nav a {
     height: 250px;
 }
 
-.row .minifig-container {
-    padding: 2rem;
+.minifig-container {
+    padding: 2rem !important;
+    display: table-cell !important;
+    vertical-align:bottom !important;
+    text-align:center !important;
+    float:none !important;
 }
 
 .right {
