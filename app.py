@@ -66,12 +66,6 @@ def register():
     return render_template('register.html')
 
 
-@app.route('/log_out')
-def log_out():
-    session.clear()
-    return redirect(url_for('index_page'))
-
-
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -81,6 +75,13 @@ def login_required(f):
             return render_template('login.html',
                             text='* You need to be logged in to continue!')
     return wrap
+
+
+@app.route('/log_out')
+@login_required
+def log_out():
+    session.clear()
+    return redirect(url_for('index_page'))
 
 
 @app.route('/get_minifigures')
@@ -93,6 +94,7 @@ def get_minifigures():
 
 
 @app.route('/add_minifig')
+@login_required
 def add_minifig():
     return render_template('addminifig.html',
                            themes=mongo.db.themes.find(),
@@ -102,6 +104,7 @@ def add_minifig():
 
 
 @app.route('/insert_minifig', methods=['POST'])
+@login_required
 def insert_minifig():
     if 'photo' in request.files:
         photo = request.files['photo']
@@ -136,6 +139,7 @@ def edit_minifig(minifigure_id):
 
 
 @app.route('/update_minifig/<minifigure_id>', methods=['POST'])
+@login_required
 def update_minifig(minifigure_id):
     mongo.db.minifigures.update_one({'_id': ObjectId(minifigure_id)},
                                     {"$set": {
@@ -150,6 +154,7 @@ def update_minifig(minifigure_id):
 
 
 @app.route('/delete_minifig/<minifigure_id>')
+@login_required
 def delete_minifig(minifigure_id):
     mongo.db.minifigures.update_one({'_id': ObjectId(minifigure_id)},
                                     {"$set": {
@@ -159,16 +164,19 @@ def delete_minifig(minifigure_id):
 
 
 @app.route('/get_themes')
+@login_required
 def get_themes():
     return render_template('themes.html', themes=mongo.db.themes.find())
 
 
 @app.route('/edit_theme/<theme_id>')
+@login_required
 def edit_theme(theme_id):
     return render_template('edittheme.html', theme=mongo.db.themes.find_one({'_id': ObjectId(theme_id)}))
 
 
 @app.route('/update_theme/<theme_id>', methods=['POST'])
+@login_required
 def update_theme(theme_id):
     mongo.db.themes.update_one({'_id': ObjectId(theme_id)},
                                {"$set": {
@@ -178,18 +186,21 @@ def update_theme(theme_id):
 
 
 @app.route('/delete_theme/<theme_id>')
+@login_required
 def delete_theme(theme_id):
     mongo.db.themes.remove({'_id': ObjectId(theme_id)})
     return redirect(url_for('get_themes'))
 
 
 @app.route('/insert_theme', methods=['POST'])
+@login_required
 def insert_theme():
     mongo.db.themes.insert_one({'theme_name': request.form.get('theme_name')})
     return redirect(url_for('get_themes'))
 
 
 @app.route('/add_theme')
+@login_required
 def add_theme():
     return render_template('addtheme.html')
 
