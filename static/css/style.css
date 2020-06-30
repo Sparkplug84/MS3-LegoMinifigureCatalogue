@@ -241,11 +241,20 @@ li.active .collapsible-header .material-icons.iconremove{
 
 .love-icon {
     margin-right: 25px;
+    color: grey;
+    font-size: 20px;
+}
+
+.love-icon:hover {
+    font-size: 25px;
+}
+
+.love-icon2 {
     color: red;
 }
 
-.red-background {
-    background-color: red;
+.row-height {
+    height: 25px;
 }
 
 /* Add Minifigure */
