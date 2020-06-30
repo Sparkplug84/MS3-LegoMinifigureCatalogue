@@ -23,3 +23,9 @@ if(searchName) {
         }
     }
 }
+
+function likeMinifig() {
+    var likeIcon = document.getElementById('love-icon')
+    
+    likeIcon.classList.add('red-background');
+}

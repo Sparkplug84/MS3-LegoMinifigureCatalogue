@@ -73,7 +73,7 @@
             <a
               href="{{ url_for('get_minifigure_theme', theme_name=theme.theme_name) }}"
             >
-              {{theme.theme_name}}</a
+              {{theme.theme_name.title()}}</a
             >
           </li>
           {% endfor %}
@@ -188,6 +188,7 @@
           </div>
         </li>
       </ul>
+      <div class="right"><a href="" onclick="likeMinifig()"><span>1</span><i id="love-icon" class="material-icons love-icon">favorite_border</i></a></div>
     </div>
     {% endfor %}
   </div>

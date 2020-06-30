@@ -7,6 +7,10 @@ html {
     margin: 0 auto;
 }
 
+section {
+    margin: 0;
+    padding: 0;
+}
 
 /* Base Template */
 
@@ -235,6 +239,15 @@ li.active .collapsible-header .material-icons.iconremove{
   display: inline-block !important;
 }
 
+.love-icon {
+    margin-right: 25px;
+    color: red;
+}
+
+.red-background {
+    background-color: red;
+}
+
 /* Add Minifigure */
 
 .form {
@@ -316,6 +329,35 @@ li.active .collapsible-header .material-icons.iconremove{
     text-align: left;
 }
 
+.theme-photo1 {
+    content: url('../images/homersimpson3.jpg');
+    box-shadow: 0px 0px 10px black;
+    max-width: 150px;
+}
+
+.theme-photo2 {
+    content: url('../images/CaptainRedBeardPiratelego.jpg');
+    box-shadow: 0px 0px 10px black;
+    max-width: 150px;
+}
+
+.theme-header {
+    padding: 50px;
+}
+
+.theme-info {
+    text-align: left;
+}
+
+.theme-photos {
+    margin-top: 20px;
+}
+
+.theme-title {
+    margin-left: 25px;
+    padding-bottom: 20px;
+}
+
 /* Buttons */
 
 .yellow-btn {
@@ -378,7 +420,7 @@ main {
 
 #about-section,
 #social-links {
-    padding: 50px 72px;
+    padding: 50px 72px 0 50px;
 }
 
 .footer-img {
@@ -530,9 +572,6 @@ main {
     nav .brand-logo {
         font-size: 1.5rem;
     }
-    .home-section {
-        text-align: center;
-    }
     .form {
         width: 90%;
     }
@@ -651,3 +690,10 @@ main {
         z-index: 1;
     }
 }
+
+@media(min-width: 880px) {
+    .theme-photos {
+    margin-top: 40px;
+    }
+}
+
