@@ -1,4 +1,4 @@
-# Mark McClean
+(#Mark-McClean)
 
 ## Milestone Project 3 – Data Centric Development
 
@@ -25,6 +25,8 @@ When the user goes to the ‘Add a minifigure’ page they will be presented wit
 Users will also be given the option of adding extra Lego themes that may not yet exist in the database. There will also be options to edit and delete existing themes.
 
 The overall idea is that a community of users will be built up and they will create the catalogue for their own and others enjoyment.
+
+[↥ Back to top](#Mark-McClean)
 
 ## UX: Strategy
 
