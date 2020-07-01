@@ -1,4 +1,4 @@
-(#Mark-McClean)
+# Mark McClean
 
 ## Milestone Project 3 – Data Centric Development
 
