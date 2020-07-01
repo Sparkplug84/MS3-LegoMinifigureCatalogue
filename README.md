@@ -5,17 +5,17 @@
 ## Lego Minifigures Catalogue – Python Flask application using MongoDB
 
 ### Table of Contents
-* [Why make a Lego Minifigures Catalogue?](#Why-make-a-Lego-Minifigures-Catalogue?)
+* [Why make a Lego Minifigures Catalogue?](#Why-make-a-Lego-Minifigures-Catalogue)
 * [How the website works](#How-the-website-works)
-* [UX: Strategy](#UX:-Strategy)
+* [UX: Strategy](#UX-Strategy)
 * [Scope](#Scope)
 * [Structure](#Structure)
 * [Sketelon](#Sketelon)
-* [Surface](#Surface
+* [Surface](#Surface)
 * [Technologies Used](#Technologies-Used)
 * [Testing](#Testing)
 
-
+### View the live project
 The live website hosted by Heroku can be viewed [here](https://lego-minifigure-catalogue.herokuapp.com/).
 
 ### Why make a Lego Minifigures Catalogue?

@@ -189,7 +189,6 @@ nav a {
     display: table-cell !important;
     vertical-align:bottom !important;
     text-align:center !important;
-    float:none !important;
 }
 
 .right {
@@ -703,6 +702,12 @@ main {
 @media(min-width: 880px) {
     .theme-photos {
     margin-top: 40px;
+    }
+}
+
+@media(min-width: 1000px) {
+    .minifig-container {
+        float: none !important;
     }
 }
 
