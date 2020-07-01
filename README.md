@@ -4,6 +4,18 @@
 
 ## Lego Minifigures Catalogue – Python Flask application using MongoDB
 
+### Table of Contents
+* [Why make a Lego Minifigures Catalogue?](#Why-make-a-Lego-Minifigures-Catalogue?)
+* [How the website works](#How-the-website-works)
+* [UX: Strategy](#UX:-Strategy)
+* [Scope](#Scope)
+* [Structure](#Structure)
+* [Sketelon](#Sketelon)
+* [Surface](#Surface
+* [Technologies Used](#Technologies-Used)
+* [Testing](#Testing)
+
+
 The live website hosted by Heroku can be viewed [here](https://lego-minifigure-catalogue.herokuapp.com/).
 
 ### Why make a Lego Minifigures Catalogue?
@@ -40,6 +52,8 @@ The Lego world is a predominantly bright and vibrant one and I want my website t
 ### Why this website?
 I wanted to create a website with a sense of community where the users have the power and are relied upon to create the catalogue themselves and keep it up to date with accurate information. The theme of Lego is a bonus for me as I am a big fan of Lego.
 
+[↥ Back to top](#Mark-McClean)
+
 ## Scope
 
 ### User Stories
@@ -68,6 +82,8 @@ As a developer I would like:
 ### Goal
 My goal for this project was to create a fun, user friendly and interactive experience for lovers of Lego minifigures. The website will be clear and minimal to provide users with the best experience whilst learning how to use the catalogue. My aim is to make the users feel like they’re part of a community of fellow Lego fans that buildup the catalogue together and help to keep it maintained.
 
+[↥ Back to top](#Mark-McClean)
+
 ## Structure
 
 ### Features
@@ -85,6 +101,8 @@ My goal for this project was to create a fun, user friendly and interactive expe
 12.	On the ‘Theme Management’ page the user will have the option to add new Lego themes to the website, should some new ones become available or if existing themes do not yet appear on the website. Once new themes are added they will also appear in the drop down list within the add minifg and edit minfig forms enabling new minifig uploads to use the new themes if necessary.
 13.	Users will also have the opportunity to edit and delete existing themes, in the event that the theme is not correct or has been discontinued in the Lego world. To do this users must click on a theme on the ‘Theme Management’ page and a collapsible element will appear showing 2 options, one for edit and one for delete.
 
+[↥ Back to top](#Mark-McClean)
+
 ### Special Feature
 * **User Authentication** – User authentication is something we have not yet covered in the course however my mentor advised me to look into it as it would enhance my project and help to prevent anyone from just editing or deleting records.
 I did some research on the internet and found a very useful video on YouTube on how to set up a basic user authentication system for a flask application using sessions. I used most of the code in the video for my own system, changing a few lines.
@@ -92,13 +110,11 @@ The functionality in the user system includes allowing new users create an accou
 If an already registered user is returning to the site they have the option to log in. If the username and or password they enter are incorrect, they receive a warning and to try again. Again when they are logged in they can see this with a message in to the top right corner of the home page.
 I have also added further functionality to the buttons and navbar options, which change depending on whether a user is logged in or not. If a user is not logged in they can only view the home page or catalogue but not edit any records. Links to the add minifig and themes pages are not even visible. If they try to edit or delete any of the records in the catalogue they will be prompted to login or sign up. If a user is logged on then all functionality will be open to that user, the navbar will have more options and the homepage buttons will be different.
 
-
 ### Features left to implement
 1. I think a more extensive login and account system would be a good feature for the future. One which takes a user’s email address and notifies them if their record has been modified or deleted. 
 2. Tracking which users are doing which activities may be useful so you can see which users are modifying or deleting which records.
 3. An account page would also be useful for users so they can see their own profile and the records that they have added to the database.
 4. A chat feature so users can interact with one another if they want to discuss a particular record.
-
 
 ### Overall Structure
 For the structure of the site I wanted to start off with a large Lego minifigures image on the homepage to capture the users attention and give them a big clue as to what the website is about. Alongside the image will be a callout section with the title of the website and some links to the main sections of the website. 
@@ -106,6 +122,8 @@ Along the top of the website will be the navbar with the same links as the callo
 A footer which sticks to the bottom of the page will be used as there are a few pages with minimal content so the navbar will always be pushed to the bottom and bot below the final element of the main section.
 Most of the pages will also have a blue section somewhere with some explanation of what can be done or needs to be done on that page. This will provide a consistent design so that users will know that this section contains information about this page of the site.
 Throughout the site I have also added some single minifigure pictures, within the blue sections, to remind the users that this is what the site is about.
+
+[↥ Back to top](#Mark-McClean)
 
 ## Sketelon
 I used the Balsamiq program for the wireframes and attached them to the directory. The original idea is still recognizable from the finished application. There have obviously been some design changes along the way but the wireframe is useful to have to put the idea in your head down on paper before you start coding. The wireframes can also be view her below.<br/>
@@ -129,6 +147,8 @@ Within most buttons on the site I have also added icons to provide the user with
 ### Font
 For the font I wanted to go with something fun, modern and clear. I searched through Google fonts and decided upon ‘Ubuntu’. I took the link provided by Google and pasted it directly into my CSS file to become the default font for the whole site. There is a backup of San-Serif provided in the event that the browser being used is unable to access Google fonts.
 
+[↥ Back to top](#Mark-McClean)
+
 ## Technologies Used
 * Gitpod – used as my IDE for the development of the website.
 * HTML – used to write the code for the structure and layout of all templates in the site
@@ -142,6 +162,8 @@ For the font I wanted to go with something fun, modern and clear. I searched thr
 * 
 * 
 * 
+
+[↥ Back to top](#Mark-McClean)
 
 ## Testing
 
@@ -191,3 +213,4 @@ For the font I wanted to go with something fun, modern and clear. I searched thr
     * **Fix** – When I tried to log in using an account that I had successfully created through the registration form, I received an error message that the object had no encode attribute. After some searching on the internet and speaking with a fellow student on slack it became evident that some of the code I had copied from the video was not applicable. I had encoded the password that was stored in the database and compared it to the password passed through in the login form. However I only needed to encode the password passed through in the login form and compare it to the password in the database, which was of course already encoded from the registration form, so I didn’t need to encode it a second time.
     * **Result** – The login system now allows existing users to log in.
 
+[↥ Back to top](#Mark-McClean)
