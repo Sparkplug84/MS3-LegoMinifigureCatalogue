@@ -123,6 +123,29 @@ A footer which sticks to the bottom of the page will be used as there are a few 
 Most of the pages will also have a blue section somewhere with some explanation of what can be done or needs to be done on that page. This will provide a consistent design so that users will know that this section contains information about this page of the site.
 Throughout the site I have also added some single minifigure pictures, within the blue sections, to remind the users that this is what the site is about.
 
+### Users
+| Title       | Identifier Key | Type     | Method                |
+|-------------|----------------|----------|-----------------------|
+| User ID     | _id            | ObjectId | Automatic             |
+| User Name   | username       | string   | User Input            |
+| Password    | password       | string   | User Input  + hashing |
+| Liked Items | liked_items    | set      | User Input            |
+
+### Minifigures
+| Title                 | Identifier Key  | Type     | Method                         |
+|-----------------------|-----------------|----------|--------------------------------|
+| Minifigire ID         | _id             | ObjectId | Automatic                      |
+| Photo                 | photo           | file     | User Input                     |
+| Minifigure Name       | minifigure_name | string   | User Input                     |
+| Theme                 | theme_name      | string   | User Input,<br>dropdown select |
+| Minifigure Age        | age_range       | string   | User Input,<br>dropdown select |
+| Feature               | feature         | string   | User Input                     |
+| Number of parts       | number_of_parts | string   | User Input,<br>dropdown select |
+| Rarity                | rarity_name     | string   | User Input,<br>dropdown select |
+| Uploaded By           | uploaded_by     | string   | session username               |
+| Is minifigure deleted | minifig_deleted | Boolean  | User Input,<br>delete option   |
+| Liked Counter         | liked_counter   | integer  | User Input                     |
+
 [↥ Back to top](#Mark-McClean)
 
 ## Sketelon
@@ -157,11 +180,14 @@ For the font I wanted to go with something fun, modern and clear. I searched thr
 * Javascript – Used to provide some simple interactive features of the website.
 * jQuery – Used to initialize some Materialize components.
 * Popper.JS – Used to aid the responsiveness of the website.
-* Python – Used for the main functionality of the site. All CRUD (Create, Read, Update, Delete) functionality is provided by Python through flask and other imported technologies in the ‘app.py’ Python file such as PyMongo, flask PyMongo, 
-* MongoDB – 
-* 
-* 
-* 
+* Python – Used for the main functionality of the site. All CRUD (Create, Read, Update, Delete) functionality is provided by Python through flask and other imported technologies in the ‘app.py’ Python file such as PyMongo, flask PyMongo, bson.objectid and bcrypt. These are all listed at the top of the app.py file.
+* Flask - Flask framework was used to create the routes for the CRUD functionality.
+* Jinja - Jinja templating language was used to project some of the Flask functionality onto the frontend to make only certain features arrpear when a user is logged on for example.
+* MongoDB – MongoDVB was used as the backend database where collections were stored, created, updated and retrieved through the Flask routes.
+* Font Awesome - Font Awesome was used to display the social media icons in the footer.
+* Google Font - 1 Font was imported from Google Fonts and the URL can be found in the base template.
+* Balsamiq - This was used to build the wireframes that were then uploaded to the Gitpod IDE.
+* Tables Generator - Used to create the tables inserted here in the README file.
 
 [↥ Back to top](#Mark-McClean)
 
