@@ -216,8 +216,6 @@ def get_minifigure_theme(theme_name):
                             minifigures=minifigures,
                             themes=mongo.db.themes.find(),
                             age=mongo.db.age.find(), isFilter=True)
-    # return render_template("minifigs.html", minifigure_theme=minifigure_theme, themes=mongo.db.themes.find(),
-    #                         age=mongo.db.age.find())
 
 
 @app.route('/get_minifigure_age/<age_range>')
@@ -238,6 +236,18 @@ def get_minifigure_name():
         return render_template("minifigs.html", minifigures=minifigures, 
                 themes=mongo.db.themes.find(),
                 age=mongo.db.age.find(), isFilter=True)
+
+
+@app.route('/like_minifig/<minifigure_id>')
+def like_minifig(minifigure_id):
+        minifig = mongo.db.minifigures.find_one({"_id": ObjectId(minifigure_id)})
+        like_counter = minifig.get("liked_counter", " ")
+        user = user in session
+        liked_items = user.get("liked_items", [""])
+        if minifig in liked_items is None:
+            liked_items.append(minifig)
+        return redirect(url_for('get_minifigures'))
+    
 
 
 if __name__ == '__main__':

@@ -124,8 +124,8 @@
 <!-- All Minifigs -->
 <section class="max-width">
   <div class="row row-format">
-    {% for minifigure in minifigures %} {% if loop.index0 % 4 == 0 and
-    loop.index0 != 0 %}
+    {% for minifigure in minifigures %} 
+    {% if loop.index0 % 4 == 0 and loop.index0 != 0 %}
   </div>
   <div class="row row-format">
     {% endif %}
@@ -191,8 +191,7 @@
 
       <div class="row row-height">
         <div class="right">
-          <span>1</span
-          ><i onclick="likeMinifig(this)" class="fas fa-heart love-icon"></i>
+          <span>1</span><a href="{{ url_for('like_minifig', minifigure_id=minifigure._id) }}"><i onclick="likeMinifig(this)" class="fas fa-heart love-icon"></i></a>
         </div>
       </div>
     </div>

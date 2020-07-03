@@ -57,7 +57,7 @@
         <select id="theme" name="theme_name">
           <option value="" disabled selected>Choose Theme</option>
           {% for theme in themes %}
-          <option value="{{theme.theme_name}}">{{theme.theme_name}}</option>
+          <option value="{{theme.theme_name}}">{{theme.theme_name.title()}}</option>
           {% endfor %}
         </select>
         <label>Theme Categories</label>

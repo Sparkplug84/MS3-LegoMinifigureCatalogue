@@ -123,6 +123,11 @@ A footer which sticks to the bottom of the page will be used as there are a few 
 Most of the pages will also have a blue section somewhere with some explanation of what can be done or needs to be done on that page. This will provide a consistent design so that users will know that this section contains information about this page of the site.
 Throughout the site I have also added some single minifigure pictures, within the blue sections, to remind the users that this is what the site is about.
 
+[↥ Back to top](#Mark-McClean)
+
+## Main Database Collections
+Below are the 2 main database collections used to post and retrieve information to and from the front end to the back end.
+
 ### Users
 | Title       | Identifier Key | Type     | Method                |
 |-------------|----------------|----------|-----------------------|
@@ -193,6 +198,26 @@ For the font I wanted to go with something fun, modern and clear. I searched thr
 
 ## Testing
 
+### General Testing
+I am not currently very knowledgeable about automated testing and was short of time so I decided to do all the testing manually via the browser and Chrome Developer tools. How I achieved this was after almost every line of code that I wrote, I opened up the browser to view the live website. Viewing it in Google Chrome I am then able to right click on the website and select inspect from the menu. Chrome Developer tools opens up which allows me to view the elements, styles and console log to see JavaScript errors.
+I tried to work with small tasks in the beginning, setting up the navbar, creating some links. During this process I would view the website in the browser many times, select elements to see what default styles had been attached to them and change if necessary. Chrome Developer tools also allows you to add styles to elements and change the website as you view it. If I was happy with the changes I could copy the styles from Chrome and paste them into my CSS file. This can be useful to cut down the amout of times you view the developer tools to see what differences your styling makes and speed up the developing process. Within the Chrome developer tools there is also the console, which I monitored to find bugs in the JavaScript functions.
+After spending some time on the HTML, Materialize and CSS to set up the look, styles and responsiveness of the website, I moved on to writing the Python code. I used the same manual tests as above using Chrome Developer tools. However I learned throughout the course to also print certain variables and functions during the writing to see if the Command Line Interface was printing the desired outcome when I run the app and clicked on certain routes. This helps to see if the program reaches parts of your function and if there are any bugs, at which point it is going wrong.
+When the basic functionality of the game was in place, I shared by the website with friends and family to get their feeback of usablity and first impressions of the game and functionality.
+Through continual monitoring and with the feedback of friends and family, I have fixed a few design faults in the HTML and CSS and bugs in my Flask code.
+
+### Code Validation
+Several times during the development process I tested my code in various online validation programs.
+
+* **HTML** - For HTML I used [W3 Markup Validation Service](https://validator.w3.org/#validate_by_input). I pasted my entire HTML pages one at a time into the input field and the code was checked. I received several warnings about my code. Warnings are things that can be changed in the code but it's also not necessary.
+* **CSS** - For CSS I used [W3 CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input). Again I pasted my CSS file into the input field and the code was checked.
+* **JavaScript** - For JavaScript validation, within the Gitpod environment there is a 'Problems' tab which I checked often during the development. Any errors in the code would appear immediately so I was able to address any issue in the JavaScript right away. For external validation I used [JS Hint](https://jshint.com/).
+* **Python** - Like JavaScript, within the Gitpod environment I used the 'Problems' tab which I checked often during the development. For external validation I used [PEP8](http://pep8online.com/).
+
+### Testing in different browsers
+I used Google Chrome as my main browser test as I was constantly using the Chrome developer tools to view and adjust my code. I also regularly tested the website on my phone, also using Google Chrome. I occasionally checked Firefox on the laptop. I sent the URL to friends and family to test on ipads(5th generation or younger) and iphones(8 or younger) along with Samsung Galaxy(S9 or younger) and Saumsung Galaxy Tab(S3 or younger). Any issues I found have been documented below in the section: [Issues still to be resolved](#Issues-still-to-be-resolved).
+
+[↥ Back to top](#Mark-McClean)
+
 ### Issued found and solved throughout the development
 
 1.	* **Issue** – App not running in Heroku
@@ -240,3 +265,5 @@ For the font I wanted to go with something fun, modern and clear. I searched thr
     * **Result** – The login system now allows existing users to log in.
 
 [↥ Back to top](#Mark-McClean)
+
+### Issues still to be resolved
