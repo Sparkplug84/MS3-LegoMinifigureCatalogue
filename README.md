@@ -105,7 +105,7 @@ My goal for this project was to create a fun, user friendly and interactive expe
 
 ### User Authentication
 User authentication is something we have not yet covered in the course however my mentor advised me to look into it as it would enhance my project and help to prevent anyone from just editing or deleting records.
-I did some research on the internet and found a very useful video on YouTube on how to set up a basic user authentication system for a flask application using sessions. I used most of the code in the video for my own system, changing a few lines.
+I did some research on the internet and found a very useful [video](https://www.youtube.com/watch?v=vVx1737auSE) on YouTube on how to set up a basic user authentication system for a flask application using sessions. I used most of the code in the video for my own system, changing a few lines.
 The functionality in the user system includes allowing new users create an account with a username and password. The password has some hash and encoding functionality added so even I, as administrator of the database, cannot see the actual password in the Mongo collection. If the user tries to use a username that already exists, they receive a message that the username is already taken and to try another. Once the user successfully registers a new account, they are immediately logged in and they can see that on the home page, where they are redirected to, with a text message in to the top right corner under the navbar.
 If an already registered user is returning to the site they have the option to log in. If the username and or password they enter are incorrect, they receive a warning and to try again. Again when they are logged in they can see this with a message in to the top right corner of the home page.
 I have also added further functionality to the buttons and navbar options, which change depending on whether a user is logged in or not. If a user is not logged in they can only view the home page or catalogue but not edit any records. Links to the add minifig and themes pages are not even visible. If they try to edit or delete any of the records in the catalogue they will be prompted to login or sign up. If a user is logged on then all functionality will be open to that user, the navbar will have more options and the homepage buttons will be different.
@@ -279,3 +279,57 @@ I used Google Chrome as my main browser test as I was constantly using the Chrom
 3.	* **Issue** – Like feature not fully implemented yet.
     * **Description** – As you can see on the minifigures page below each minifigure there is a grey heart that can be click and it turns red. The frontend of the feature is working ok but I was working on the backend but ran out of time.
     * **Potential Resolution** - What I was trying to do was create a function where the minifigure_id is passed into the function and I check if that minifigure_id exists in a list of liked_items inside the users own document. If it exists in the list then it is removed and a liked_counter(which exists in the minifigure document) decreases by one and if it doesn't yet exist in the list it is added and the liked_counter increases by one. The liked_counter would then appear beside the heart to tell users how many times the record is liked. This way users can only like each record one time. A further part of the function would be to include JavaScript and Ajax to make this function run without refreshing the page.
+
+## Deployment
+The code environment was taken from a code institute [Gitpod template](https://github.com/Code-Institute-Org/gitpod-full-template) that is stored on Github. 
+This is then cloned and saved onto my own Github account as a new repository. From there I use the built in 'Gitpod' button to open up the new repository on my own Gitpod account. 
+The template then opens with a boiler plate to start coding including links for Bootstrap, jQuery, Popper and Font Awesome so I didn’t need to look for the CDN’s myself. 
+After every session of coding I committed my work using the Git terminal in Gitpod. Every commit has a message attached to clearly explain the changes that were made since the last commit. After the commit, the code is also then pushed to my Github account, also using the Git terminal.
+
+### How to run this project locally
+To run this project on your own IDE follow the instructions below.
+Ensure you have an IDE such as GitPod and the following installed:
+* PIP
+* Git
+* Python3
+* If you are using the Code Institute Full template the above will already be installed
+* A MongoDB account
+
+### Instructions
+* After installing all required modules to make your functions work you need to run the command `pip3 freeze -r requirements.txt` in the CLI. This will create a requirements file, which later in the project, can be updated with the same command if you were to add more modules.
+* In your local IDE create a file called `env.py`
+* Inside the `env.py` file, create a SECRET_KEY variable and a MONGO_URI to link to your own database.
+* Make sure to immediately add `env.py` to a `.gitignore` file so it's not committed and pushed to the repository where anyone can then see the SECRET_KEY and MONGO_URI
+* You can now run the application with the command `python app.py`
+
+### Heroku Deployment
+* Create a requirements.txt file using the terminal command `pip freeze > requirements.txt`
+* Create a Procfile with the terminal command `echo web: python app.py > Procfile`
+* git add and git commit the new requirements and Procfile and then git push the project to GitHub.
+* Create a new app on the Heroku website by clicking the "New" button in your dashboard. Give it a name and set the region to Europe.
+* From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+* Confirm the linking of the heroku app to the correct GitHub repository.
+* In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+* Set the following config vars:
+    * DEBUG: False
+    * IP: 0.0.0.0
+    * MONGO_URI: `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority`
+    * PORT: 5000
+    * SECRET_KEY: `<your_secret_key>`
+* The MONGO_URI will have to be retrieved from your own MongoDB account. The URI will include information relative to your own account: username, password, database_name and so on.
+* In the heroku dashboard, click "Deploy"
+* In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch"
+* The site should now be successfully deployed.
+
+## Credits
+* All content was written by myself
+* All photos from the catalogue page were taken and uploaded by myself along with family and friends
+* Other photos on the site come from various sources found through Google image search
+* Log in with sessions functionality came from a [YouTube video](https://www.youtube.com/watch?v=vVx1737auSE)
+* Uploading photos into Mongo also came from a [YouTube video](https://www.youtube.com/watch?v=DsgAuceHha4)
+* Code institute tudors helped me throughout the project on functions for search filters, saving and displaying photos.
+
+### Special thanks
+* Special thanks to my mentor Anthony Ngene who talked me through several pieces of code and advised me on how to improve my code
+* Many thanks to the Code Institute tudors, who also helped me out with some small and larger issues I had during the development process
+* Thanks to all the friends and family who tested the game on various devides and gave me feedback to improve the game
