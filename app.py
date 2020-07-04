@@ -240,14 +240,20 @@ def get_minifigure_name():
 
 @app.route('/like_minifig/<minifigure_id>')
 def like_minifig(minifigure_id):
-        minifig = mongo.db.minifigures.find_one({"_id": ObjectId(minifigure_id)})
-        like_counter = minifig.get("liked_counter", " ")
-        user = user in session
-        liked_items = user.get("liked_items", [""])
-        if minifig in liked_items is None:
-            liked_items.append(minifig)
-        return redirect(url_for('get_minifigures'))
-    
+    user = mongo.db.users.find_one({"name": session['username']})
+    print(user)
+    user_liked = user.get('liked_items')
+    print(user_liked)
+    like_counter = mongo.db.minifigures.find_one({'_id': ObjectId(minifigure_id), 'liked_counter': ''})
+    print(like_counter)
+    if minifigure_id in user_liked:
+        user_liked.remove(minifigure_id)
+        like_counter --1
+    else:
+        user_liked.append(minifigure_id)
+        like_counter ++1
+    mongo.db.users.update_one
+    return redirect(url_for('get_minifigures'))
 
 
 if __name__ == '__main__':
