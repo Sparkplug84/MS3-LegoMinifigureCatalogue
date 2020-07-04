@@ -14,6 +14,9 @@
 * [Surface](#Surface)
 * [Technologies Used](#Technologies-Used)
 * [Testing](#Testing)
+* [Project Drawbacks](#Project-Drawbacks)
+* [Deployment](#Deployment)
+* [Credits and Thanks](#Credits)
 
 ### View the live project
 The live website hosted by Heroku can be viewed [here](https://lego-minifigure-catalogue.herokuapp.com/).
@@ -110,6 +113,8 @@ The functionality in the user system includes allowing new users create an accou
 If an already registered user is returning to the site they have the option to log in. If the username and or password they enter are incorrect, they receive a warning and to try again. Again when they are logged in they can see this with a message in to the top right corner of the home page.
 I have also added further functionality to the buttons and navbar options, which change depending on whether a user is logged in or not. If a user is not logged in they can only view the home page or catalogue but not edit any records. Links to the add minifig and themes pages are not even visible. If they try to edit or delete any of the records in the catalogue they will be prompted to login or sign up. If a user is logged on then all functionality will be open to that user, the navbar will have more options and the homepage buttons will be different.
 
+[↥ Back to top](#Mark-McClean)
+
 ### Features left to implement
 1. I think a more extensive login and account system would be a good feature for the future. One which takes a user’s email address and notifies them if their record has been modified or deleted. 
 2. Tracking which users are doing which activities may be useful so you can see which users are modifying or deleting which records.
@@ -164,6 +169,8 @@ I used the Balsamiq program for the wireframes and attached them to the director
 [Wireframe 7 - Add Minifig Mobile](wireframes/7.MobileAddMinifig.png)<br/>
 [Wireframe 8 - Manage Themes Mobile](wireframes/8.MobileThemes.png)
 
+[↥ Back to top](#Mark-McClean)
+
 ## Surface
 
 ### Colours and icons
@@ -204,6 +211,8 @@ I tried to work with small tasks in the beginning, setting up the navbar, creati
 After spending some time on the HTML, Materialize and CSS to set up the look, styles and responsiveness of the website, I moved on to writing the Python code. I used the same manual tests as above using Chrome Developer tools. However I learned throughout the course to also print certain variables and functions during the writing to see if the Command Line Interface was printing the desired outcome when I run the app and clicked on certain routes. This helps to see if the program reaches parts of your function and if there are any bugs, at which point it is going wrong.
 When the basic functionality of the game was in place, I shared by the website with friends and family to get their feeback of usablity and first impressions of the game and functionality.
 Through continual monitoring and with the feedback of friends and family, I have fixed a few design faults in the HTML and CSS and bugs in my Flask code.
+
+[↥ Back to top](#Mark-McClean)
 
 ### Code Validation
 Several times during the development process I tested my code in various online validation programs.
@@ -280,10 +289,14 @@ I used Google Chrome as my main browser test as I was constantly using the Chrom
     * **Description** – As you can see on the minifigures page below each minifigure there is a grey heart that can be click and it turns red. The frontend of the feature is working ok but I was working on the backend but ran out of time.
     * **Potential Resolution** - What I was trying to do was create a function where the minifigure_id is passed into the function and I check if that minifigure_id exists in a list of liked_items inside the users own document. If it exists in the list then it is removed and a liked_counter(which exists in the minifigure document) decreases by one and if it doesn't yet exist in the list it is added and the liked_counter increases by one. The liked_counter would then appear beside the heart to tell users how many times the record is liked. This way users can only like each record one time. A further part of the function would be to include JavaScript and Ajax to make this function run without refreshing the page.
 
+[↥ Back to top](#Mark-McClean)
+
 ## Project Drawbacks
 I realise there are a number of dropbacks with this project for immediate and long term use of this application and I just wan to document them here:
 * The first drawback I encountered was using MongoDB for uploading images. I was advised that this is not really what it was designed for, it's more used for data only. It is however possible to upload files and photos into your documents as you can see from the [video tutorial](https://www.youtube.com/watch?v=DsgAuceHha4) I used to upload the photos. The problem came from the limit on the Mongo document size which is 16MB. I assume most users will visit the site through their mobiles where they can take a photo and immediately upload it to the application. Most camera phones take pictures somewhere between 3MB and 5MB so this is well within the document limit size. There is however always the posibility that a user may want to upload a photo from a higher quality camera and that may well exceed the 16MB and that would result in the photo not uploading to the database. This occasion would be quite rare and therefore I think at the moment it is an acceptable risk.
 * The second drawback is the overall size of the free Mongo Database, which is 500MB. I could fit between 100 and 200 records if I assume most photos are between 3-5MB so this is more than enought for this small scale education project but if I every wanted to take this project further in the future I would have to think about upgrading the current database to a bigger(paid) version so there would never be problems with database size limit.
+
+[↥ Back to top](#Mark-McClean)
 
 ## Deployment
 The code environment was taken from a code institute [Gitpod template](https://github.com/Code-Institute-Org/gitpod-full-template) that is stored on Github. 
@@ -299,6 +312,8 @@ Ensure you have an IDE such as GitPod and the following installed:
 * Python3
 * If you are using the Code Institute Full template the above will already be installed
 * A MongoDB account
+
+[↥ Back to top](#Mark-McClean)
 
 ### Instructions
 * After installing all required modules to make your functions work you need to run the command `pip3 freeze -r requirements.txt` in the CLI. This will create a requirements file, which later in the project, can be updated with the same command if you were to add more modules.
@@ -326,6 +341,8 @@ Ensure you have an IDE such as GitPod and the following installed:
 * In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch"
 * The site should now be successfully deployed.
 
+[↥ Back to top](#Mark-McClean)
+
 ## Credits
 * All content was written by myself
 * All photos from the catalogue page were taken and uploaded by myself along with family and friends
@@ -337,6 +354,8 @@ Ensure you have an IDE such as GitPod and the following installed:
 * Stack overflow was also where I found the code for the login_required wrap function
 
 ### Special thanks
-* Special thanks to my mentor Anthony Ngene who talked me through several pieces of code and advised me on how to improve my code
+* Special thanks to my mentor [Anthony Ngene](https://github.com/tonymontaro) who talked me through several pieces of code and advised me on how to improve my code
 * Many thanks to the Code Institute tudors, who also helped me out with some small and larger issues I had during the development process
 * Thanks to all the friends and family who tested the game on various devides and gave me feedback to improve the game
+
+[↥ Back to top](#Mark-McClean)
