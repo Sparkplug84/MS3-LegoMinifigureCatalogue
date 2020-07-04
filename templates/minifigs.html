@@ -6,7 +6,8 @@
   </div>
 </div>
 
-<!-- Search options -->
+<!----------- Filter options ----------->
+
 <div>
   <div class="row filter-row max-width">
     <div class="filter-container">
@@ -27,7 +28,7 @@
         <label>Filter results by...</label>
       </div>
 
-      <!-- Search Filter by name -->
+      <!------------- Search Filter by name ------------->
 
       <div id="search-box" class="input-field col s12 m6 l3 d-none">
         <form
@@ -53,7 +54,7 @@
         </form>
       </div>
 
-      <!-- Search Filter by theme -->
+      <!----------- Search Filter by theme ------------>
 
       <div
         id="theme-box"
@@ -66,7 +67,6 @@
           >Choose Theme
           <i class="material-icons iconadd filter-icon">expand_more</i></a
         >
-        <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
           {% for theme in themes %}
           <li>
@@ -80,7 +80,7 @@
         </ul>
       </div>
 
-      <!-- Search Filter by age -->
+      <!----------- Search Filter by age --------------->
 
       <div id="age-box" class="input-field col s12 m6 l3 d-none mobile-centre">
         <a
@@ -90,7 +90,6 @@
           >Choose Age
           <i class="material-icons iconadd filter-icon">expand_more</i></a
         >
-        <!-- Dropdown Structure -->
         <ul id="dropdown2" class="dropdown-content">
           {% for years in age %}
           <li>
@@ -104,7 +103,7 @@
         </ul>
       </div>
 
-      <!-- Cancel Filter -->
+      <!---------- Cancel Filter ------------->
 
       <div id="cancel-filter" class="input-field col s12 m6 l3 mobile-centre">
         {% if isFilter %}
@@ -121,7 +120,8 @@
   </div>
 </div>
 
-<!-- All Minifigs -->
+<!---------- All Minifigs ------------->
+
 <section class="max-width">
   <div class="row row-format">
     {% for minifigure in minifigures %} 
@@ -191,7 +191,7 @@
 
       <div class="row row-height">
         <div class="right">
-          <span>1</span><a href="{{ url_for('like_minifig', minifigure_id=minifigure._id) }}"><i onclick="likeMinifig(this)" class="fas fa-heart love-icon"></i></a>
+          <span></span><i onclick="likeMinifig(this)" class="fas fa-heart love-icon"></i>
         </div>
       </div>
     </div>

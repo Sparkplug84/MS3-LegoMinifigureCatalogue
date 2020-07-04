@@ -273,6 +273,10 @@ I used Google Chrome as my main browser test as I was constantly using the Chrom
     * **Fix** – When I tried to log in using an account that I had successfully created through the registration form, I received an error message that the object had no encode attribute. After some searching on the internet and speaking with a fellow student on slack it became evident that some of the code I had copied from the video was not applicable. I had encoded the password that was stored in the database and compared it to the password passed through in the login form. However I only needed to encode the password passed through in the login form and compare it to the password in the database, which was of course already encoded from the registration form, so I didn’t need to encode it a second time.
     * **Result** – The login system now allows existing users to log in.
 
+11. * **Issue** - Dropdown menus were briefly appearing and then immediately disappearing again on click
+    * **Fix** - The dropdown menus that I was using from Materialize were only briefly appearing after the first click and then disappearing again. On the second click the menu would appear amd remain visible this time. I did some research and found that other people had the same problem and it was a bug in the Materialize dropdown menus. I found a jQuery function in a Github article that got rid of the problem. The code appears at the bottom of the base template and is documented there also.
+    * **Result** - Dropdown menus now all appear and remain visible on first and every click.
+
 [↥ Back to top](#Mark-McClean)
 
 ### Issues still to be resolved

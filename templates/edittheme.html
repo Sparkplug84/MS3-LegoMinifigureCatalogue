@@ -1,5 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
+<!-------------Edit theme form ----------->
+
 <h3>Edit Theme</h3>
 <div class="row form">
   <form action="{{ url_for('update_theme', theme_id=theme._id) }}" method="POST" class="col s12" enctype="multipart/form-data">
