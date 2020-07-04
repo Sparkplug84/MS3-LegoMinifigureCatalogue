@@ -23,9 +23,9 @@
           <option value="" disabled selected>Choose Theme</option>
           {% for theme in themes %}
           {% if theme.theme_name == minifigure.theme_name %}
-          <option value="{{theme.theme_name}}" selected>{{theme.theme_name}}</option>
+          <option value="{{theme.theme_name}}" selected>{{theme.theme_name.title()}}</option>
           {% else %}
-          <option value="{{theme.theme_name}}">{{theme.theme_name}}</option>
+          <option value="{{theme.theme_name}}">{{theme.theme_name.title()}}</option>
           {% endif %}
           {% endfor %}
         </select>

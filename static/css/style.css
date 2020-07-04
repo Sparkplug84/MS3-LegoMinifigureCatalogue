@@ -12,7 +12,7 @@ section {
     padding: 0;
 }
 
-/* Base Template */
+/* ------- Base Template -------- */
 
 .lego-icon {
     content: url('https://cdn3.iconfinder.com/data/icons/miscellaneous-vol-2-2/64/lego-head_with_hair-512.png');
@@ -47,7 +47,7 @@ nav a {
 }
 
 
-/* index */
+/* ------------ index ------------- */
 
 .login {
     text-align: right;
@@ -100,7 +100,7 @@ nav a {
     content: url('https://img.brickowl.com/files/image_cache/larger/lego-police-woman-minifigure-28.jpg');
 }
 
-/* Minifigure Display */
+/* ---------- Minifigure Display ------------ */
 
 .banner {
     width: 100%;
@@ -702,12 +702,6 @@ main {
 @media(min-width: 880px) {
     .theme-photos {
     margin-top: 40px;
-    }
-}
-
-@media(min-width: 1000px) {
-    .minifig-container {
-        float: none !important;
     }
 }
 

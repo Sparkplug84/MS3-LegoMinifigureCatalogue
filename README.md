@@ -280,6 +280,11 @@ I used Google Chrome as my main browser test as I was constantly using the Chrom
     * **Description** – As you can see on the minifigures page below each minifigure there is a grey heart that can be click and it turns red. The frontend of the feature is working ok but I was working on the backend but ran out of time.
     * **Potential Resolution** - What I was trying to do was create a function where the minifigure_id is passed into the function and I check if that minifigure_id exists in a list of liked_items inside the users own document. If it exists in the list then it is removed and a liked_counter(which exists in the minifigure document) decreases by one and if it doesn't yet exist in the list it is added and the liked_counter increases by one. The liked_counter would then appear beside the heart to tell users how many times the record is liked. This way users can only like each record one time. A further part of the function would be to include JavaScript and Ajax to make this function run without refreshing the page.
 
+## Project Drawbacks
+I realise there are a number of dropbacks with this project for immediate and long term use of this application and I just wan to document them here:
+* The first drawback I encountered was using MongoDB for uploading images. I was advised that this is not really what it was designed for, it's more used for data only. It is however possible to upload files and photos into your documents as you can see from the [video tutorial](https://www.youtube.com/watch?v=DsgAuceHha4) I used to upload the photos. The problem came from the limit on the Mongo document size which is 16MB. I assume most users will visit the site through their mobiles where they can take a photo and immediately upload it to the application. Most camera phones take pictures somewhere between 3MB and 5MB so this is well within the document limit size. There is however always the posibility that a user may want to upload a photo from a higher quality camera and that may well exceed the 16MB and that would result in the photo not uploading to the database. This occasion would be quite rare and therefore I think at the moment it is an acceptable risk.
+* The second drawback is the overall size of the free Mongo Database, which is 500MB. I could fit between 100 and 200 records if I assume most photos are between 3-5MB so this is more than enought for this small scale education project but if I every wanted to take this project further in the future I would have to think about upgrading the current database to a bigger(paid) version so there would never be problems with database size limit.
+
 ## Deployment
 The code environment was taken from a code institute [Gitpod template](https://github.com/Code-Institute-Org/gitpod-full-template) that is stored on Github. 
 This is then cloned and saved onto my own Github account as a new repository. From there I use the built in 'Gitpod' button to open up the new repository on my own Gitpod account. 
@@ -328,6 +333,8 @@ Ensure you have an IDE such as GitPod and the following installed:
 * Log in with sessions functionality came from a [YouTube video](https://www.youtube.com/watch?v=vVx1737auSE)
 * Uploading photos into Mongo also came from a [YouTube video](https://www.youtube.com/watch?v=DsgAuceHha4)
 * Code institute tudors helped me throughout the project on functions for search filters, saving and displaying photos.
+* Stack overflow was used to find CSS styles for the minifigure name icon toggle animation detailed in the CSS file.
+* Stack overflow was also where I found the code for the login_required wrap function
 
 ### Special thanks
 * Special thanks to my mentor Anthony Ngene who talked me through several pieces of code and advised me on how to improve my code
