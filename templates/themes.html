@@ -12,7 +12,7 @@
         existing ones.
       </h5>
       <p>
-        Here users are encouraged to join the community and help build the Lego
+        Here we invite you to join the community and help build the Lego
         Catalogue by keeping all Lego themes up to date and adding new ones if
         necessary.
       </p>
@@ -33,8 +33,8 @@
     </div>
   </div>
 </div>
-<!------------- List of current themes ----------->
 
+<!------------- List of current themes ----------->
 
 <section>
   <div class="row themes-container">
@@ -61,6 +61,7 @@
             </a>
             <a
               class="edit-link"
+              onclick="if (confirm('Are you sure you want to delete this theme? It will be removed and no longer in use. It may also affect existing minifigures using that theme.')) commentDelete(1); return false"
               href="{{ url_for('delete_theme', theme_id=theme._id) }}"
             >
               <div class="edit list-item">

@@ -2,7 +2,12 @@
 
 <!------------- Edit minifigure form ----------->
 
-<h3>Edit Minifigure</h3>
+<div class="row banner">
+  <div class="">
+    <h3>Edit Minifigure</h3>
+  </div>
+</div>
+
 <div class="row form">
   <form action="{{ url_for('update_minifig', minifigure_id=minifigure._id) }}" method="POST" class="col s12" enctype="multipart/form-data">
     <div class="row">

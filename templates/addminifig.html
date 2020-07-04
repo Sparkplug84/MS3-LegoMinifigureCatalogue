@@ -53,13 +53,14 @@
           name="minifigure_name"
           type="text"
           class="validate"
+          required
         />
         <label for="icon_prefix">Minifigure Name</label>
       </div>
 
       <div class="input-field col s12">
         <i class="material-icons prefix">theaters</i>
-        <select id="theme" name="theme_name">
+        <select id="theme" name="theme_name" required>
           <option value="" disabled selected>Choose Theme</option>
           {% for theme in themes %}
           <option value="{{theme.theme_name}}">{{theme.theme_name.title()}}</option>
