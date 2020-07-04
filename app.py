@@ -23,7 +23,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/index_page')
 def index_page():
-# displays home page with message if user logged in
+    # displays home page with message if user logged in
     if 'username' in session:
         return render_template('index.html',
                                 text='You are logged on as ' + session['username'])
@@ -32,13 +32,13 @@ def index_page():
 
 @app.route('/login_form')
 def login_form():
-# displays the log in form
+    # displays the log in form
     return render_template('login.html')
 
 
 @app.route('/login', methods=['POST'])
 def login():
-# Checks if user exists and logs user in, errors if wrong password/username
+    # Checks if user exists and logs user in, errors if wrong password/username
     users = mongo.db.users
     login_user = users.find_one({'name': request.form['username']})
 
@@ -54,7 +54,7 @@ def login():
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
-# Registers and logs in a new user, errors id username alredady exists
+    # Registers and logs in a new user, errors id username alredady exists
     if request.method == 'POST':
         users = mongo.db.users
         existing_user = users.find_one({'name': request.form['username']})
@@ -71,7 +71,7 @@ def register():
 
 
 def login_required(f):
-# this is a wrap function which wraps around other routes to first check if a user is logged in before continuing with the function.
+    # this is a wrap function which wraps around other routes to first check if a user is logged in before continuing with the function.
     @wraps(f)
     def wrap(*args, **kwargs):
         if 'username' in session:
@@ -85,14 +85,14 @@ def login_required(f):
 @app.route('/log_out')
 @login_required
 def log_out():
-# this will log a user out of the session
+    # this will log a user out of the session
     session.clear()
     return redirect(url_for('index_page'))
 
 
 @app.route('/get_minifigures')
 def get_minifigures():
-# this will retrieve all the minifigure records from Mongo and display them
+    # this will retrieve all the minifigure records from Mongo and display them
     minifigures = mongo.db.minifigures.find({"minifig_deleted": False})
     minifigures = list(minifigures)[::-1]
     return render_template(
@@ -105,7 +105,7 @@ def get_minifigures():
 @app.route('/add_minifig')
 @login_required
 def add_minifig():
-# This will display the page and form for adding a minifigure
+    # This will display the page and form for adding a minifigure
     return render_template('addminifig.html',
                            themes=mongo.db.themes.find(),
                            age=mongo.db.age.find(),
@@ -116,7 +116,7 @@ def add_minifig():
 @app.route('/insert_minifig', methods=['POST'])
 @login_required
 def insert_minifig():
-# This will take the info from the form and save it onto the Monog database
+    # This will take the info from the form and save it onto the Monog database
     if 'photo' in request.files:
         photo = request.files['photo']
         mongo.save_file(photo.filename, photo)
@@ -135,14 +135,14 @@ def insert_minifig():
 
 @app.route('/file/<filename>')
 def file(filename):
-# This will retrieve and store the images uploaded onto Mongo
+    # This will retrieve and store the images uploaded onto Mongo
     return mongo.send_file(filename)
 
 
 @app.route('/edit_minifig/<minifigure_id>')
 @login_required
 def edit_minifig(minifigure_id):
-# This route displays the edit minifigure form with existing info already filled in
+    # This route displays the edit minifigure form with existing info already filled in
     the_minifig = mongo.db.minifigures.find_one(
         {"_id": ObjectId(minifigure_id)})
     all_themes = mongo.db.themes.find()
@@ -155,7 +155,7 @@ def edit_minifig(minifigure_id):
 @app.route('/update_minifig/<minifigure_id>', methods=['POST'])
 @login_required
 def update_minifig(minifigure_id):
-# this will take the info from the edit form and send it to Mongo to update the record
+    # this will take the info from the edit form and send it to Mongo to update the record
     mongo.db.minifigures.update_one({'_id': ObjectId(minifigure_id)},
                                     {"$set": {
                                         'minifigure_name': request.form.get('minifigure_name').lower(),
@@ -171,7 +171,7 @@ def update_minifig(minifigure_id):
 @app.route('/delete_minifig/<minifigure_id>')
 @login_required
 def delete_minifig(minifigure_id):
-# The delete route will hide the record from view of user but not completely delete from database
+    # The delete route will hide the record from view of user but not completely delete from database
     mongo.db.minifigures.update_one({'_id': ObjectId(minifigure_id)},
                                     {"$set": {
                                         'minifig_deleted': True}
@@ -182,21 +182,21 @@ def delete_minifig(minifigure_id):
 @app.route('/get_themes')
 @login_required
 def get_themes():
-# Renders the themes page
+    # Renders the themes page
     return render_template('themes.html', themes=mongo.db.themes.find())
 
 
 @app.route('/edit_theme/<theme_id>')
 @login_required
 def edit_theme(theme_id):
-# Renders the edit theme form
+    # Renders the edit theme form
     return render_template('edittheme.html', theme=mongo.db.themes.find_one({'_id': ObjectId(theme_id)}))
 
 
 @app.route('/update_theme/<theme_id>', methods=['POST'])
 @login_required
 def update_theme(theme_id):
-# takes the info in the form and updates the theme in the database
+    # takes the info in the form and updates the theme in the database
     mongo.db.themes.update_one({'_id': ObjectId(theme_id)},
                                {"$set": {
                                    'theme_name': request.form.get('theme_name').lower()}
@@ -207,7 +207,7 @@ def update_theme(theme_id):
 @app.route('/delete_theme/<theme_id>')
 @login_required
 def delete_theme(theme_id):
-# deletes a theme from the database completely
+    # deletes a theme from the database completely
     mongo.db.themes.remove({'_id': ObjectId(theme_id)})
     return redirect(url_for('get_themes'))
 
@@ -215,7 +215,7 @@ def delete_theme(theme_id):
 @app.route('/insert_theme', methods=['POST'])
 @login_required
 def insert_theme():
-# takes the info from the form and creates a new theme in the database
+    # takes the info from the form and creates a new theme in the database
     mongo.db.themes.insert_one({'theme_name': request.form.get('theme_name').lower()})
     return redirect(url_for('get_themes'))
 
@@ -223,13 +223,13 @@ def insert_theme():
 @app.route('/add_theme')
 @login_required
 def add_theme():
-# renders the add theme form
+    # renders the add theme form
     return render_template('addtheme.html')
 
 
 @app.route('/get_minifigure_theme/<theme_name>')
 def get_minifigure_theme(theme_name):
-# filters the records by theme
+    # filters the records by theme
     minifigures = mongo.db.minifigures.find(
         {'theme_name': theme_name, "minifig_deleted": False})
     return render_template("minifigs.html",
@@ -240,7 +240,7 @@ def get_minifigure_theme(theme_name):
 
 @app.route('/get_minifigure_age/<age_range>')
 def get_minifigure_age(age_range):
-# filters the records by age range
+    # filters the records by age range
     minifigures = mongo.db.minifigures.find(
         {'age_range': age_range, "minifig_deleted": False})
     return render_template("minifigs.html",
@@ -251,7 +251,7 @@ def get_minifigure_age(age_range):
 
 @app.route('/get_minifigure_name', methods=['GET', 'POST'])
 def get_minifigure_name():
-# filters the records by name
+    # filters the records by name
     if request.method == "POST":
         minifigures = mongo.db.minifigures.find(
             {'minifigure_name': request.form['minifigure_name'].lower(), "minifig_deleted": False})
@@ -262,7 +262,7 @@ def get_minifigure_name():
 
 @app.route('/like_minifig/<minifigure_id>')
 def like_minifig(minifigure_id):
-# ** UNFINISHED ROUTE ** likes a minifigure by increasing the count by 1 or decreasing if user doesn't like anymore.  
+    # ** UNFINISHED ROUTE ** likes a minifigure by increasing the count by 1 or decreasing if user doesn't like anymore.  
     user = mongo.db.users.find_one({"name": session['username']})
     print(user)
     user_liked = user.get('liked_items')

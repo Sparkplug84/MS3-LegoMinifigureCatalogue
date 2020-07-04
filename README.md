@@ -185,21 +185,21 @@ For the font I wanted to go with something fun, modern and clear. I searched thr
 [↥ Back to top](#Mark-McClean)
 
 ## Technologies Used
-* Gitpod – used as my IDE for the development of the website.
+* [Gitpod](https://www.gitpod.io/) – used as my IDE for the development of the website.
 * HTML – used to write the code for the structure and layout of all templates in the site
 * CSS – used for custom styling of many HTML elements. 
-* Materialize – Materialize was used to provide the navbar, footer, forms, collapsible elements for each database record and the use of a grid system. Most of these imported elements have then been custom styled to suit this project.
+* [Materialize](https://materializecss.com/) – Materialize was used to provide the navbar, footer, forms, collapsible elements for each database record and the use of a grid system. Most of these imported elements have then been custom styled to suit this project.
 * Javascript – Used to provide some simple interactive features of the website.
 * jQuery – Used to initialize some Materialize components.
 * Popper.JS – Used to aid the responsiveness of the website.
 * Python – Used for the main functionality of the site. All CRUD (Create, Read, Update, Delete) functionality is provided by Python through flask and other imported technologies in the ‘app.py’ Python file such as PyMongo, flask PyMongo, bson.objectid and bcrypt. These are all listed at the top of the app.py file.
 * Flask - Flask framework was used to create the routes for the CRUD functionality.
 * Jinja - Jinja templating language was used to project some of the Flask functionality onto the frontend to make only certain features arrpear when a user is logged on for example.
-* MongoDB – MongoDVB was used as the backend database where collections were stored, created, updated and retrieved through the Flask routes.
-* Font Awesome - Font Awesome was used to display the social media icons in the footer.
-* Google Font - 1 Font was imported from Google Fonts and the URL can be found in the base template.
+* [MongoDB](https://account.mongodb.com/account/login) – MongoDVB was used as the backend database where collections were stored, created, updated and retrieved through the Flask routes.
+* [Font Awesome](https://fontawesome.com/) - Font Awesome was used to display the social media icons in the footer.
+* [Google Font](https://fonts.google.com/) - 1 Font was imported from Google Fonts and the URL can be found in the base template.
 * Balsamiq - This was used to build the wireframes that were then uploaded to the Gitpod IDE.
-* Tables Generator - Used to create the tables inserted here in the README file.
+* [Tables Generator](https://www.tablesgenerator.com/) - Used to create the tables inserted here in the README file.
 
 [↥ Back to top](#Mark-McClean)
 
@@ -217,10 +217,10 @@ Through continual monitoring and with the feedback of friends and family, I have
 ### Code Validation
 Several times during the development process I tested my code in various online validation programs.
 
-* **HTML** - For HTML I used [W3 Markup Validation Service](https://validator.w3.org/#validate_by_input). I pasted my entire HTML pages one at a time into the input field and the code was checked. I received several warnings about my code. Warnings are things that can be changed in the code but it's also not necessary.
-* **CSS** - For CSS I used [W3 CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input). Again I pasted my CSS file into the input field and the code was checked.
-* **JavaScript** - For JavaScript validation, within the Gitpod environment there is a 'Problems' tab which I checked often during the development. Any errors in the code would appear immediately so I was able to address any issue in the JavaScript right away. For external validation I used [JS Hint](https://jshint.com/).
-* **Python** - Like JavaScript, within the Gitpod environment I used the 'Problems' tab which I checked often during the development. For external validation I used [PEP8](http://pep8online.com/).
+* **HTML** - For HTML I used [W3 Markup Validation Service](https://validator.w3.org/#validate_by_input). I pasted my entire HTML pages one at a time into the input field and the code was checked. I received several warnings and errors about my code. A lot of the errors were to do with the fact that I am using templates and templating language and not every page has a document type or a language defined. These can be ignored because all the information is on the base.html page, which all other pages are an extension of. I also got some errors regarding the `label for="icon-prefix"` that element must be the ID of a non-hidden form control however this element is a materialize element and attribute so i don't need to worry about this error. Further than that most errors where about the href values of url_for. I'm assuming the validator does not recognise this as being valid HTML but all links on the application have been thoroughly tested so I can ignore these errors.
+* **CSS** - For CSS I used [W3 CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input). Again I pasted my CSS file into the input field and the code was checked. There were only some warnings about vendor extensions. Nothing that affects the running of the code so I ignored them.
+* **JavaScript** - For JavaScript validation, within the Gitpod environment there is a 'Problems' tab which I checked often during the development. Any errors in the code would appear immediately so I was able to address any issue in the JavaScript right away. For external validation I used [JS Hint](https://jshint.com/). There were no major problems with the JavaScript
+* **Python** - Like JavaScript, within the Gitpod environment I used the 'Problems' tab which I checked often during the development. For external validation I used [PEP8](http://pep8online.com/). The only issues I had were lines that were too long or over indented lines. These things are easily fixed and did not affect the functionality.
 
 ### Testing in different browsers
 I used Google Chrome as my main browser test as I was constantly using the Chrome developer tools to view and adjust my code. I also regularly tested the website on my phone, also using Google Chrome. I occasionally checked Firefox on the laptop. I sent the URL to friends and family to test on ipads(5th generation or younger) and iphones(8 or younger) along with Samsung Galaxy(S9 or younger) and Saumsung Galaxy Tab(S3 or younger). Any issues I found have been documented below in the section: [Issues still to be resolved](#Issues-still-to-be-resolved).
@@ -292,9 +292,9 @@ I used Google Chrome as my main browser test as I was constantly using the Chrom
 [↥ Back to top](#Mark-McClean)
 
 ## Project Drawbacks
-I realise there are a number of dropbacks with this project for immediate and long term use of this application and I just wan to document them here:
+I realise there are a number of dropbacks with this project for immediate and long term use of this application and I just want to document them here:
 * The first drawback I encountered was using MongoDB for uploading images. I was advised that this is not really what it was designed for, it's more used for data only. It is however possible to upload files and photos into your documents as you can see from the [video tutorial](https://www.youtube.com/watch?v=DsgAuceHha4) I used to upload the photos. The problem came from the limit on the Mongo document size which is 16MB. I assume most users will visit the site through their mobiles where they can take a photo and immediately upload it to the application. Most camera phones take pictures somewhere between 3MB and 5MB so this is well within the document limit size. There is however always the posibility that a user may want to upload a photo from a higher quality camera and that may well exceed the 16MB and that would result in the photo not uploading to the database. This occasion would be quite rare and therefore I think at the moment it is an acceptable risk.
-* The second drawback is the overall size of the free Mongo Database, which is 500MB. I could fit between 100 and 200 records if I assume most photos are between 3-5MB so this is more than enought for this small scale education project but if I every wanted to take this project further in the future I would have to think about upgrading the current database to a bigger(paid) version so there would never be problems with database size limit.
+* The second drawback is the overall size of the free Mongo Database, which is 500MB. I could fit between 100 and 200 records if I assume most photos are between 3-5MB so this is more than enought for this small scale educational project but if I ever wanted to take this project further in the future I would have to think about upgrading the current database to a bigger(paid) version so there would never be problems with database size limit.
 
 [↥ Back to top](#Mark-McClean)
 
@@ -303,24 +303,6 @@ The code environment was taken from a code institute [Gitpod template](https://g
 This is then cloned and saved onto my own Github account as a new repository. From there I use the built in 'Gitpod' button to open up the new repository on my own Gitpod account. 
 The template then opens with a boiler plate to start coding including links for Bootstrap, jQuery, Popper and Font Awesome so I didn’t need to look for the CDN’s myself. 
 After every session of coding I committed my work using the Git terminal in Gitpod. Every commit has a message attached to clearly explain the changes that were made since the last commit. After the commit, the code is also then pushed to my Github account, also using the Git terminal.
-
-### How to run this project locally
-To run this project on your own IDE follow the instructions below.
-Ensure you have an IDE such as GitPod and the following installed:
-* PIP
-* Git
-* Python3
-* If you are using the Code Institute Full template the above will already be installed
-* A MongoDB account
-
-[↥ Back to top](#Mark-McClean)
-
-### Instructions
-* After installing all required modules to make your functions work you need to run the command `pip3 freeze -r requirements.txt` in the CLI. This will create a requirements file, which later in the project, can be updated with the same command if you were to add more modules.
-* In your local IDE create a file called `env.py`
-* Inside the `env.py` file, create a SECRET_KEY variable and a MONGO_URI to link to your own database.
-* Make sure to immediately add `env.py` to a `.gitignore` file so it's not committed and pushed to the repository where anyone can then see the SECRET_KEY and MONGO_URI
-* You can now run the application with the command `python app.py`
 
 ### Heroku Deployment
 * Create a requirements.txt file using the terminal command `pip freeze > requirements.txt`
@@ -343,6 +325,24 @@ Ensure you have an IDE such as GitPod and the following installed:
 
 [↥ Back to top](#Mark-McClean)
 
+### How to run this project locally
+To run this project on your own IDE follow the instructions below.
+Ensure you have an IDE such as GitPod and the following installed:
+* PIP
+* Git
+* Python3
+* If you are using the Code Institute Full template the above will already be installed
+* A MongoDB account
+
+### Instructions
+* After installing all required modules to make your functions work you need to run the command `pip3 freeze -r requirements.txt` in the CLI. This will create a requirements file, which later in the project, can be updated with the same command if you were to add more modules.
+* In your local IDE create a file called `env.py`
+* Inside the `env.py` file, create a SECRET_KEY variable and a MONGO_URI to link to your own database.
+* Make sure to immediately add `env.py` to a `.gitignore` file so it's not committed and pushed to the repository where anyone can then see the SECRET_KEY and MONGO_URI
+* You can now run the application with the command `python app.py`
+
+[↥ Back to top](#Mark-McClean)
+
 ## Credits
 * All content was written by myself
 * All photos from the catalogue page were taken and uploaded by myself along with family and friends
@@ -357,5 +357,8 @@ Ensure you have an IDE such as GitPod and the following installed:
 * Special thanks to my mentor [Anthony Ngene](https://github.com/tonymontaro) who talked me through several pieces of code and advised me on how to improve my code
 * Many thanks to the Code Institute tudors, who also helped me out with some small and larger issues I had during the development process
 * Thanks to all the friends and family who tested the game on various devides and gave me feedback to improve the game
+
+Disclaimer:
+The content of the website is for educational purposes only.
 
 [↥ Back to top](#Mark-McClean)
